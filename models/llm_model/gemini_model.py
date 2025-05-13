@@ -1,0 +1,25 @@
+from src.utils import get_gemini_client
+from dotenv import load_dotenv
+import os
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+
+load_dotenv()
+api_key = os.getenv("API_KEY")
+base_url = os.getenv("BASE_URL")
+client = get_gemini_client(api_key,base_url)
+
+def json_response(prompt):
+    response = client.chat.completions.create(
+            model="gemini-2.0-flash",
+            messages=[
+                {"role": "system", "content": 'You are a Helpful assistant.'},
+                {"role": "user", "content": prompt}
+            ],
+            response_format={'type': 'json_object'}
+        )
+    return response.choices[0].message.content
+
+def chat_model():
+    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", api_key=api_key)
+    return llm

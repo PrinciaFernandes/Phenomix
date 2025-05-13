@@ -1,0 +1,117 @@
+[ 2025-04-25 11:28:07,516 ] 11 WDM - INFO - ====== WebDriver manager ======
+[ 2025-04-25 11:28:09,078 ] 11 WDM - INFO - Get LATEST chromedriver version for google-chrome
+[ 2025-04-25 11:28:09,212 ] 11 WDM - INFO - Get LATEST chromedriver version for google-chrome
+[ 2025-04-25 11:28:09,328 ] 11 WDM - INFO - Driver [C:\Users\PrinciaFernandes\.wdm\drivers\chromedriver\win64\135.0.7049.114\chromedriver-win32/chromedriver.exe] found in cache
+[ 2025-04-25 11:28:10,746 ] 18 __main__ - INFO - STARTING SENTINEL PIPELINE...
+[ 2025-04-25 11:28:10,747 ] 19 src.pipeline.sentinel_pipe - INFO - SCRAPPING SENTINEL phenotypes...
+[ 2025-04-25 11:31:58,654 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:32:14,794 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:32:35,507 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:32:51,287 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:33:04,817 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:33:14,909 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:33:27,330 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:33:39,335 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:33:50,629 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:34:02,011 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:34:14,081 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:34:26,675 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:34:40,238 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:34:56,690 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:35:13,700 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:35:29,378 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:35:44,502 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:35:57,170 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:36:09,615 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:36:25,160 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:36:37,568 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:36:50,840 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:37:02,305 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:37:14,462 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:37:29,713 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:37:40,973 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:37:59,672 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:38:13,508 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:38:28,617 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:38:41,620 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:38:58,875 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:39:18,328 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:39:34,829 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:39:47,468 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:39:59,892 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:40:12,461 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:40:26,217 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:40:39,729 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:40:51,555 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:41:04,872 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:41:17,561 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:41:31,615 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:41:45,589 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:41:59,482 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:42:16,860 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:42:31,612 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:42:45,696 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:43:00,367 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:43:14,075 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:43:28,046 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:43:40,946 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:43:55,594 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:44:09,620 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:44:21,958 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:44:37,567 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:44:50,659 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:45:04,419 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:45:17,988 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:45:31,893 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:45:44,942 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:45:58,386 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:46:13,043 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:46:26,242 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:46:40,367 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:46:55,569 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:47:10,393 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:47:24,627 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:47:41,296 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:47:57,233 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:48:15,232 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:48:19,881 ] 1026 httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/chat/completions "HTTP/1.1 200 OK"
+[ 2025-04-25 11:48:19,892 ] 22 src.pipeline.sentinel_pipe - INFO - SCRAPPING SENTINEL done successfully
+[ 2025-04-25 11:48:20,025 ] 28 src.pipeline.sentinel_pipe - INFO - Creating SENTINEL detail file...
+[ 2025-04-25 11:48:20,026 ] 30 src.pipeline.sentinel_pipe - INFO - SENTINEL detail file Created Successfully...
+[ 2025-04-25 11:48:20,029 ] 36 src.pipeline.sentinel_pipe - INFO - Creating SENTINEL concept file...
+[ 2025-04-25 11:48:20,416 ] 38 src.pipeline.sentinel_pipe - INFO - SENTINEL concept file Created Successfully...
+[ 2025-04-25 11:48:20,759 ] 21 __main__ - INFO - SENTINEL PIPELINE COMPLETED SUCCESSFULLY
+[ 2025-04-25 11:48:20,760 ] 29 __main__ - INFO - STARTING HDRUK PIPELINE...
+[ 2025-04-25 11:48:20,760 ] 20 src.pipeline.hdruk_pipe - INFO - SCRAPPING HDRUK phenotypes...
+[ 2025-04-25 11:49:08,604 ] 24 src.pipeline.hdruk_pipe - INFO - SCRAPPING HDRUK done successfully
+[ 2025-04-25 11:49:09,063 ] 30 src.pipeline.hdruk_pipe - INFO - Creating HDRUK detail file...
+[ 2025-04-25 11:49:09,065 ] 32 src.pipeline.hdruk_pipe - INFO - HDRUK detail file Created Successfully...
+[ 2025-04-25 11:49:09,065 ] 38 src.pipeline.hdruk_pipe - INFO - Creating HDRUK concept file...
+[ 2025-04-25 11:49:10,344 ] 40 src.pipeline.hdruk_pipe - INFO - HDRUK concept file Created Successfully...
+[ 2025-04-25 11:49:10,730 ] 32 __main__ - INFO - HDRUK PIPELINE COMPLETED SUCCESSFULLY
+[ 2025-04-25 11:49:10,730 ] 41 __main__ - INFO - STARTING CPRD PIPELINE...
+[ 2025-04-25 11:49:10,730 ] 19 src.pipeline.cprd_pipe - INFO - SCRAPPING CPRD phenotypes...
+[ 2025-04-25 11:49:12,673 ] 22 src.pipeline.cprd_pipe - INFO - SCRAPPING CPRD done successfully
+[ 2025-04-25 11:49:12,686 ] 28 src.pipeline.cprd_pipe - INFO - Creating CPRD detail file...
+[ 2025-04-25 11:49:12,687 ] 30 src.pipeline.cprd_pipe - INFO - CPRD detail file Created Successfully...
+[ 2025-04-25 11:49:12,689 ] 36 src.pipeline.cprd_pipe - INFO - Creating CPRD concept file...
+[ 2025-04-25 11:49:12,691 ] 38 src.pipeline.cprd_pipe - INFO - CPRD concept file Created Successfully...
+[ 2025-04-25 11:49:12,721 ] 44 __main__ - INFO - CPRD PIPELINE COMPLETED SUCCESSFULLY
+[ 2025-04-25 11:49:12,722 ] 53 __main__ - INFO - STARTING PHEKB PIPELINE...
+[ 2025-04-25 11:49:25,993 ] 56 __main__ - INFO - PHEKB PIPELINE COMPLETED SUCCESSFULLY
+[ 2025-04-25 11:49:25,993 ] 64 __main__ - INFO - STARTING OHDSI PIPELINE...
+[ 2025-04-25 11:49:25,993 ] 15 src.pipeline.ohdsi_pipe - INFO - Creating OHDSI detail file...
+[ 2025-04-25 11:49:26,050 ] 18 src.pipeline.ohdsi_pipe - INFO - OHDSI detail file Created Successfully...
+[ 2025-04-25 11:49:26,207 ] 25 src.pipeline.ohdsi_pipe - INFO - Creating OHDSI concept file...
+[ 2025-04-25 11:49:26,293 ] 27 src.pipeline.ohdsi_pipe - INFO - OHDSI concept file Created Successfully...
+[ 2025-04-25 11:49:26,314 ] 67 __main__ - INFO - OHDSI PIPELINE COMPLETED SUCCESSFULLY
+[ 2025-04-25 11:49:26,513 ] 79 __main__ - INFO - CREATING MASTERLIST
+[ 2025-04-25 11:49:26,513 ] 88 __main__ - ERROR - AN ERROR OCCURRED WHILE CREATING MASTERLIST 
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\main.py", line 80, in <module>
+    combined_detail = transform_detail(detail_files)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\masterlist\masterlist.py", line 7, in transform_detail
+    if 'Outcome' in dict.keys():
+                   ^^^^^^^^^
+AttributeError: 'list' object has no attribute 'keys'

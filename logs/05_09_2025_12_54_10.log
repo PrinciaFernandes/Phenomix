@@ -1,0 +1,36 @@
+[ 2025-05-09 12:54:11,085 ] 17 __main__ - INFO - STARTING PIPELINE...
+[ 2025-05-09 12:54:11,086 ] 59 __main__ - INFO - STARTING PHEKB PIPELINE...
+[ 2025-05-09 12:54:11,086 ] 18 src.pipeline.phekb_pipe - INFO - SCRAPPING PHEKB phenotypes...
+[ 2025-05-09 12:54:11,086 ] 11 WDM - INFO - ====== WebDriver manager ======
+[ 2025-05-09 12:54:13,644 ] 11 WDM - INFO - Get LATEST chromedriver version for google-chrome
+[ 2025-05-09 12:54:13,749 ] 11 WDM - INFO - Get LATEST chromedriver version for google-chrome
+[ 2025-05-09 12:54:13,828 ] 11 WDM - INFO - Driver [C:\Users\PrinciaFernandes\.wdm\drivers\chromedriver\win64\136.0.7103.92\chromedriver-win32/chromedriver.exe] found in cache
+[ 2025-05-09 13:02:20,138 ] 21 src.pipeline.phekb_pipe - INFO - SCRAPPING PHEKB done successfully
+[ 2025-05-09 13:02:20,163 ] 27 src.pipeline.phekb_pipe - INFO - Creating PHEKB detail file...
+[ 2025-05-09 13:02:20,164 ] 29 src.pipeline.phekb_pipe - INFO - PHEKB detail file Created Successfully...
+[ 2025-05-09 13:02:20,181 ] 35 src.pipeline.phekb_pipe - INFO - Creating PHEKB concept file...
+[ 2025-05-09 13:02:20,183 ] 37 src.pipeline.phekb_pipe - INFO - PHEKB concept file Created Successfully...
+[ 2025-05-09 13:02:20,200 ] 62 __main__ - INFO - PHEKB PIPELINE COMPLETED SUCCESSFULLY
+[ 2025-05-09 13:02:20,203 ] 71 __main__ - INFO - STARTING OHDSI PIPELINE...
+[ 2025-05-09 13:02:20,203 ] 16 src.pipeline.ohdsi_pipe - INFO - Creating OHDSI detail file...
+[ 2025-05-09 13:02:32,337 ] 19 src.pipeline.ohdsi_pipe - INFO - OHDSI detail file Created Successfully...
+[ 2025-05-09 13:02:32,863 ] 26 src.pipeline.ohdsi_pipe - INFO - Creating OHDSI concept file...
+[ 2025-05-09 20:49:39,367 ] 31 src.pipeline.ohdsi_pipe - ERROR - ERROR while creating OHDSI concept file
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\pipeline\ohdsi_pipe.py", line 27, in main
+    self.concept = get_concept(ohdsi,self.detail)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\processing\ohdsi_concept_detail.py", line 44, in get_concept
+    if concept['Concept_ID'] == int(row['Concept Id']):
+                                ^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[ 2025-05-09 20:49:46,770 ] 79 __main__ - ERROR - AN ERROR OCCURRED WHILE RUNNING THE OHDSI PIPELINE
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\main.py", line 74, in <module>
+    logger.info("OHDSI PIPELINE COMPLETED SUCCESSFULLY")
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\logging\__init__.py", line 1529, in info
+    def info(self, msg, *args, **kwargs):
+    
+KeyboardInterrupt
+[ 2025-05-09 20:49:46,809 ] 82 __main__ - INFO - Extracting detail files
+[ 2025-05-09 20:49:46,810 ] 96 __main__ - INFO - Extracting concept files

@@ -1,0 +1,68 @@
+[ 2025-05-07 09:30:23,038 ] 11 WDM - INFO - ====== WebDriver manager ======
+[ 2025-05-07 09:30:25,561 ] 11 WDM - INFO - Get LATEST chromedriver version for google-chrome
+[ 2025-05-07 09:30:25,659 ] 11 WDM - INFO - Get LATEST chromedriver version for google-chrome
+[ 2025-05-07 09:30:25,735 ] 11 WDM - INFO - Driver [C:\Users\PrinciaFernandes\.wdm\drivers\chromedriver\win64\136.0.7103.92\chromedriver-win32/chromedriver.exe] found in cache
+[ 2025-05-07 09:30:27,358 ] 70 __main__ - INFO - STARTING OHDSI PIPELINE...
+[ 2025-05-07 09:30:27,358 ] 16 src.pipeline.ohdsi_pipe - INFO - Creating OHDSI detail file...
+[ 2025-05-07 09:30:35,962 ] 19 src.pipeline.ohdsi_pipe - INFO - OHDSI detail file Created Successfully...
+[ 2025-05-07 09:30:36,293 ] 26 src.pipeline.ohdsi_pipe - INFO - Creating OHDSI concept file...
+[ 2025-05-07 09:32:12,581 ] 31 src.pipeline.ohdsi_pipe - ERROR - ERROR while creating OHDSI concept file
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\pipeline\ohdsi_pipe.py", line 27, in main
+    self.concept = get_concept(ohdsi,self.detail)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\processing\ohdsi_concept_detail.py", line 42, in get_concept
+    if concept['Concept_ID'] == int(row['Concept Id']):
+                                ^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[ 2025-05-07 09:32:13,011 ] 73 __main__ - INFO - OHDSI PIPELINE COMPLETED SUCCESSFULLY
+[ 2025-05-07 09:32:13,011 ] 78 __main__ - ERROR - AN ERROR OCCURRED WHILE RUNNING THE OHDSI PIPELINE
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\main.py", line 75, in <module>
+    concept_files.extend(ohdsi_obj.concept)
+TypeError: 'NoneType' object is not iterable
+[ 2025-05-07 09:32:13,016 ] 84 __main__ - INFO - CREATING MASTERLIST
+[ 2025-05-07 09:32:13,021 ] 87 __main__ - INFO - MASTERLIST CREATED SUCCESSFULLY
+[ 2025-05-07 09:32:13,052 ] 97 __main__ - INFO - STARTING NEO4J LOADER...
+[ 2025-05-07 09:32:15,118 ] 101 __main__ - ERROR - AN ERROR OCCURRED WHILE RUNNING THE NEO4J LOADER
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 409, in _connect_secure
+    s.connect(resolved_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\main.py", line 98, in <module>
+    push_to_neo4j(masterlist,detail_files,concept_files)
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\database\neo4j.py", line 11, in push_to_neo4j
+    session.run("""
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\site-packages\neo4j\_sync\work\session.py", line 313, in run
+    self._connect(self._config.default_access_mode)
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\site-packages\neo4j\_sync\work\session.py", line 136, in _connect
+    super()._connect(
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\site-packages\neo4j\_sync\work\workspace.py", line 199, in _connect
+    self._connection = self._pool.acquire(**acquire_kwargs_)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\site-packages\neo4j\_sync\io\_pool.py", line 662, in acquire
+    return self._acquire(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\site-packages\neo4j\_sync\io\_pool.py", line 408, in _acquire
+    return connection_creator()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\site-packages\neo4j\_sync\io\_pool.py", line 230, in connection_creator
+    connection = self.opener(
+                 ^^^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\site-packages\neo4j\_sync\io\_pool.py", line 624, in opener
+    return Bolt.open(
+           ^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 369, in open
+    s, protocol_version, handshake, data = BoltSocket.connect(
+                                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\site-packages\neo4j\_sync\io\_bolt_socket.py", line 328, in connect
+    s = cls._connect_secure(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 422, in _connect_secure
+    type(error).__name__,
+    ^^^^^^^^^^^
+KeyboardInterrupt

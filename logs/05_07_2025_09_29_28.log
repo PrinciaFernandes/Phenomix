@@ -1,0 +1,72 @@
+[ 2025-05-07 09:29:29,417 ] 11 WDM - INFO - ====== WebDriver manager ======
+[ 2025-05-07 09:29:31,659 ] 11 WDM - INFO - Get LATEST chromedriver version for google-chrome
+[ 2025-05-07 09:29:32,839 ] 11 WDM - INFO - Get LATEST chromedriver version for google-chrome
+[ 2025-05-07 09:29:32,921 ] 11 WDM - INFO - There is no [win64] chromedriver "136.0.7103.92" for browser google-chrome "136.0.7103" in cache
+[ 2025-05-07 09:29:32,922 ] 11 WDM - INFO - Get LATEST chromedriver version for google-chrome
+[ 2025-05-07 09:29:33,110 ] 11 WDM - INFO - WebDriver version 136.0.7103.92 selected
+[ 2025-05-07 09:29:33,122 ] 11 WDM - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.92/win32/chromedriver-win32.zip
+[ 2025-05-07 09:29:33,122 ] 11 WDM - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.92/win32/chromedriver-win32.zip
+[ 2025-05-07 09:29:34,320 ] 11 WDM - INFO - Driver downloading response is 200
+[ 2025-05-07 09:29:36,586 ] 11 WDM - INFO - Get LATEST chromedriver version for google-chrome
+[ 2025-05-07 09:29:36,855 ] 11 WDM - INFO - Driver has been saved in cache [C:\Users\PrinciaFernandes\.wdm\drivers\chromedriver\win64\136.0.7103.92]
+[ 2025-05-07 09:29:43,582 ] 58 __main__ - INFO - STARTING PHEKB PIPELINE...
+[ 2025-05-07 09:29:43,589 ] 18 src.pipeline.phekb_pipe - INFO - SCRAPPING PHEKB phenotypes...
+[ 2025-05-07 09:30:00,499 ] 24 src.pipeline.phekb_pipe - ERROR - ERROR while scrapping PHEKB phenotypes
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\pipeline\phekb_pipe.py", line 20, in main
+    phekb = phekb_scrapping(base_url)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\scraping\phekb_webscrapping.py", line 25, in phekb_scrapping
+    time.sleep(3)
+KeyboardInterrupt
+[ 2025-05-07 09:30:00,510 ] 27 src.pipeline.phekb_pipe - INFO - Creating PHEKB detail file...
+[ 2025-05-07 09:30:00,510 ] 32 src.pipeline.phekb_pipe - ERROR - ERROR while creating PHEKB detail file
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\pipeline\phekb_pipe.py", line 28, in main
+    self.detail = get_detail(phekb)
+                             ^^^^^
+UnboundLocalError: cannot access local variable 'phekb' where it is not associated with a value
+[ 2025-05-07 09:30:00,511 ] 35 src.pipeline.phekb_pipe - INFO - Creating PHEKB concept file...
+[ 2025-05-07 09:30:00,512 ] 40 src.pipeline.phekb_pipe - ERROR - ERROR while creating PHEKB concept file
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\pipeline\phekb_pipe.py", line 36, in main
+    self.concept = get_concept(phekb, self.detail)
+                               ^^^^^
+UnboundLocalError: cannot access local variable 'phekb' where it is not associated with a value
+[ 2025-05-07 09:30:00,513 ] 61 __main__ - INFO - PHEKB PIPELINE COMPLETED SUCCESSFULLY
+[ 2025-05-07 09:30:00,513 ] 66 __main__ - ERROR - AN ERROR OCCURRED WHILE RUNNING THE PHEKB PIPELINE
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\main.py", line 62, in <module>
+    detail_files.extend(phekb_obj.detail)
+TypeError: 'NoneType' object is not iterable
+[ 2025-05-07 09:30:00,515 ] 70 __main__ - INFO - STARTING OHDSI PIPELINE...
+[ 2025-05-07 09:30:00,516 ] 16 src.pipeline.ohdsi_pipe - INFO - Creating OHDSI detail file...
+[ 2025-05-07 09:30:02,843 ] 22 src.pipeline.ohdsi_pipe - ERROR - ERROR while creating OHDSI detail file
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\pipeline\ohdsi_pipe.py", line 17, in main
+    ohdsi =  get_ohdsi_data(OHDSI_CONCEPT_DIR)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\processing\ohdsi_concept_detail.py", line 13, in get_ohdsi_data
+    for row in dictreader:
+               ^^^^^^^^^^
+  File "C:\Users\PrinciaFernandes\anaconda3\Lib\csv.py", line 116, in __next__
+    row = next(self.reader)
+          ^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[ 2025-05-07 09:30:02,955 ] 26 src.pipeline.ohdsi_pipe - INFO - Creating OHDSI concept file...
+[ 2025-05-07 09:30:02,955 ] 31 src.pipeline.ohdsi_pipe - ERROR - ERROR while creating OHDSI concept file
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\src\pipeline\ohdsi_pipe.py", line 27, in main
+    self.concept = get_concept(ohdsi,self.detail)
+                   ^^^^^
+UnboundLocalError: cannot access local variable 'ohdsi' where it is not associated with a value
+[ 2025-05-07 09:30:02,956 ] 73 __main__ - INFO - OHDSI PIPELINE COMPLETED SUCCESSFULLY
+[ 2025-05-07 09:30:02,956 ] 78 __main__ - ERROR - AN ERROR OCCURRED WHILE RUNNING THE OHDSI PIPELINE
+Traceback (most recent call last):
+  File "C:\Users\PrinciaFernandes\Mresult\Phenomix\main.py", line 74, in <module>
+    detail_files.extend(ohdsi_obj.detail)
+TypeError: 'NoneType' object is not iterable
+[ 2025-05-07 09:30:02,957 ] 84 __main__ - INFO - CREATING MASTERLIST
+[ 2025-05-07 09:30:02,958 ] 87 __main__ - INFO - MASTERLIST CREATED SUCCESSFULLY
+[ 2025-05-07 09:30:02,960 ] 97 __main__ - INFO - STARTING NEO4J LOADER...
+[ 2025-05-07 09:30:02,961 ] 99 __main__ - INFO - NEO4J LOADING COMPLETED SUCCESSFULLY
