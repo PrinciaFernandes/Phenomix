@@ -175,5 +175,5 @@ cython_debug/
 .pypirc
 /data/processed
 /data/raw
-
+/logs
 **.json 
