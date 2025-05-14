@@ -176,4 +176,3 @@ cython_debug/
 /data/processed
 /data/raw
 /logs
-**.json 
