@@ -36,13 +36,12 @@ def pheno_search(phenotype_input):
 
     if websites:
         selected_website = st.selectbox("Select Website :", websites,key="search_website")
-
-        if selected_website:
+        if selected_website is not None:
             pid_data = get_pids(phenotype_input, selected_website)
             pid_options = [item["pid"] for item in pid_data]
 
             if pid_options:
-                selected_pid = st.selectbox("Select PID", pid_options,key="search_pid")
+                selected_pid = st.selectbox("Select PID", pid_options,key = "Seacrh_pid")
 
                 selected_detail = next((item["props"] for item in pid_data if item["pid"] == selected_pid), None)
                 related_concepts = get_concepts_for_pid(selected_pid)
