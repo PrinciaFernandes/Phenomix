@@ -44,7 +44,9 @@ def graph_view(phenotype_name):
     if phenotype_name:
         with driver.session() as session:   
             records = session.execute_read(get_graph_data, phenotype_name)
-
+            print(len(records))
+            if len(records) > 1000: 
+                    return st.error("The graph is too large to display. Try a more specific phenotype.")
             if records:
                 G = build_graph(records)
                 html_content = draw_pyvis_graph(G)

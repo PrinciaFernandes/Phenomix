@@ -77,27 +77,9 @@ elif page == 'Phenomix Assistant':
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
     
-    # st.markdown("""
-    #     <style>
-    #     .custom-input input {
-    #         background-color: #c94f9c !important;  /* Pink background */
-    #         color: white !important;              /* White text */
-    #         border-radius: 10px !important;
-    #     }
-
-    #     .custom-input input::placeholder {
-    #         color: white !important;              /* White placeholder */
-    #         opacity: 1 !important;
-    #     }
-    #     </style>
-    # """, unsafe_allow_html=True)
-
-    
     query = st.chat_input("Your query")
 
-
     if query:
-        # st.chat_message("User").write(query)
         response = dynamic_search(query)
         col1, col2 = st.columns(2)
         
