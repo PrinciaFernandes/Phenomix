@@ -54,7 +54,7 @@ except:
     logger.exception("AN ERROR OCCURRED WHILE RUNNING THE CPRD PIPELINE")    
 
 
-#PHEKB
+PHEKB
 try:
     logger.info("STARTING PHEKB PIPELINE...")
     phekb_obj = PHEKBPipeline()
@@ -118,6 +118,7 @@ try:
     combined_detail = transform_detail(detail_files)
     masterlist = create_masterlist(combined_detail)
     logger.info("MASTERLIST CREATED SUCCESSFULLY")
+    os.makedirs(MASTERLIST_DIR, exist_ok=True)
     with open(rf'{MASTERLIST_DIR}\Masterlist.json','w') as file:
         json.dump(masterlist,file,indent=4)
 
