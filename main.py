@@ -54,7 +54,7 @@ except:
     logger.exception("AN ERROR OCCURRED WHILE RUNNING THE CPRD PIPELINE")    
 
 
-PHEKB
+# PHEKB
 try:
     logger.info("STARTING PHEKB PIPELINE...")
     phekb_obj = PHEKBPipeline()

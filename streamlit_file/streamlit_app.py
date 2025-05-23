@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import streamlit as st
 import time
 from views.phenosearch import pheno_search
@@ -6,9 +10,9 @@ from views.table import table_view
 from views.dynamic import dynamic_search,get_cypher
 
 
-st.set_page_config(page_title="Phenotype Explorer",layout="centered",page_icon=r"streamlit\assets\pheno_image.png")
+st.set_page_config(page_title="Phenotype Explorer",layout="centered",page_icon=r"streamlit_file\assets\pheno_image.png")
 
-st.sidebar.image(r'streamlit\assets\icon.png', use_container_width=True)
+st.sidebar.image(r'streamlit_file\assets\icon.png', use_container_width=True)
 page = st.sidebar.radio("Pages",["Phenomix Explorer","Phenomix Assistant"],index = 0)
 
 if page =='Phenomix Explorer':
