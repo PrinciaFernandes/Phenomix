@@ -6878,7 +6878,7 @@
     {
         "Phenotypes": "Epilepsy/Antiepileptic drug response algorithm",
         "hdruk_PID": null,
-        "phekb_PID": "PP000039",
+        "phekb_PID": "PP000038",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -7058,7 +7058,7 @@
     {
         "Phenotypes": "Febrile Neutropenia (Pediatric)",
         "hdruk_PID": null,
-        "phekb_PID": "PP000040",
+        "phekb_PID": "PP000039",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -7211,7 +7211,7 @@
     {
         "Phenotypes": "Functional seizures",
         "hdruk_PID": null,
-        "phekb_PID": "PP000041",
+        "phekb_PID": "PP000040",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -7247,7 +7247,7 @@
     {
         "Phenotypes": "Gastroesophageal Reflux Disease (GERD) Phenotype Algorithm",
         "hdruk_PID": null,
-        "phekb_PID": "PP000042",
+        "phekb_PID": "PP000041",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -7472,7 +7472,7 @@
     {
         "Phenotypes": "HIV",
         "hdruk_PID": "HP000343",
-        "phekb_PID": "PP000048",
+        "phekb_PID": "PP000047",
         "cprd_PID": "CP000068",
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -7571,7 +7571,7 @@
     {
         "Phenotypes": "Hearing Loss",
         "hdruk_PID": null,
-        "phekb_PID": "PP000043",
+        "phekb_PID": "PP000042",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": "OP000186",
@@ -7598,7 +7598,7 @@
     {
         "Phenotypes": "Heart Failure (HF) with Differentiation between Preserved and Reduced Ejection Fraction",
         "hdruk_PID": null,
-        "phekb_PID": "PP000044",
+        "phekb_PID": "PP000043",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -7670,7 +7670,7 @@
     {
         "Phenotypes": "Height",
         "hdruk_PID": null,
-        "phekb_PID": "PP000045",
+        "phekb_PID": "PP000044",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -7841,7 +7841,7 @@
     {
         "Phenotypes": "Herpes Zoster",
         "hdruk_PID": null,
-        "phekb_PID": "PP000046",
+        "phekb_PID": "PP000045",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -7868,7 +7868,7 @@
     {
         "Phenotypes": "High-Density Lipoproteins (HDL)",
         "hdruk_PID": null,
-        "phekb_PID": "PP000047",
+        "phekb_PID": "PP000046",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -8219,7 +8219,7 @@
     {
         "Phenotypes": "Hypothyroidism",
         "hdruk_PID": "HP000610, HP000733, HP000734, HP000842",
-        "phekb_PID": "PP000049",
+        "phekb_PID": "PP000048",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -8246,7 +8246,7 @@
     {
         "Phenotypes": "Identification of Fibromyalgia Patients in a Rheumatoid Arthritis Cohort",
         "hdruk_PID": null,
-        "phekb_PID": "PP000050",
+        "phekb_PID": "PP000049",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -8507,7 +8507,7 @@
     {
         "Phenotypes": "Intellectual Disability",
         "hdruk_PID": null,
-        "phekb_PID": "PP000051",
+        "phekb_PID": "PP000050",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -9011,7 +9011,7 @@
     {
         "Phenotypes": "Lipids",
         "hdruk_PID": null,
-        "phekb_PID": "PP000052",
+        "phekb_PID": "PP000051",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -9074,7 +9074,7 @@
     {
         "Phenotypes": "Liver cancer staging project",
         "hdruk_PID": null,
-        "phekb_PID": "PP000053",
+        "phekb_PID": "PP000052",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -9704,7 +9704,7 @@
     {
         "Phenotypes": "MidSouth CDRN - Coronary Heart Disease Algorithm",
         "hdruk_PID": null,
-        "phekb_PID": "PP000054",
+        "phekb_PID": "PP000053",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -9713,7 +9713,7 @@
     {
         "Phenotypes": "MidSouth CDRN - Healthy Weight Algorithm",
         "hdruk_PID": null,
-        "phekb_PID": "PP000055",
+        "phekb_PID": "PP000054",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -9722,7 +9722,7 @@
     {
         "Phenotypes": "Migraine",
         "hdruk_PID": "HP000374, HP000659",
-        "phekb_PID": "PP000056",
+        "phekb_PID": "PP000055",
         "cprd_PID": "CP000093",
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -9812,7 +9812,7 @@
     {
         "Phenotypes": "Multimodal Analgesia",
         "hdruk_PID": null,
-        "phekb_PID": "PP000057",
+        "phekb_PID": "PP000056",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -9830,7 +9830,7 @@
     {
         "Phenotypes": "Multiple Sclerosis - Demonstration Project",
         "hdruk_PID": null,
-        "phekb_PID": "PP000058",
+        "phekb_PID": "PP000057",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -10676,7 +10676,7 @@
     {
         "Phenotypes": "Non-alcoholic fatty liver disease (NALFD) & Alcoholic Fatty Liver Disease (ALD)",
         "hdruk_PID": null,
-        "phekb_PID": "PP000059",
+        "phekb_PID": "PP000058",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -10838,7 +10838,7 @@
     {
         "Phenotypes": "Opioid-exposed infants",
         "hdruk_PID": null,
-        "phekb_PID": "PP000060",
+        "phekb_PID": "PP000059",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -11126,7 +11126,7 @@
     {
         "Phenotypes": "Ovarian/Uterine Cancer (OvUtCa)",
         "hdruk_PID": null,
-        "phekb_PID": "PP000061",
+        "phekb_PID": "PP000060",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -11144,7 +11144,7 @@
     {
         "Phenotypes": "PGx medication risk prediction model",
         "hdruk_PID": null,
-        "phekb_PID": "PP000064",
+        "phekb_PID": "PP000063",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -11324,7 +11324,7 @@
     {
         "Phenotypes": "Peanut Allergy",
         "hdruk_PID": null,
-        "phekb_PID": "PP000062",
+        "phekb_PID": "PP000061",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -11432,7 +11432,7 @@
     {
         "Phenotypes": "Peripheral Arterial Disease - 2012",
         "hdruk_PID": null,
-        "phekb_PID": "PP000063",
+        "phekb_PID": "PP000062",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -11765,7 +11765,7 @@
     {
         "Phenotypes": "PhEMA BPH (Benign Prostatic Hyperplasia) cases",
         "hdruk_PID": null,
-        "phekb_PID": "PP000065",
+        "phekb_PID": "PP000064",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -11909,7 +11909,7 @@
     {
         "Phenotypes": "Pneumonia- VUMC eMERGE v5.1",
         "hdruk_PID": null,
-        "phekb_PID": "PP000066",
+        "phekb_PID": "PP000065",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -11999,7 +11999,7 @@
     {
         "Phenotypes": "Post-event Pain algorithm",
         "hdruk_PID": null,
-        "phekb_PID": "PP000067",
+        "phekb_PID": "PP000066",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -13205,7 +13205,7 @@
     {
         "Phenotypes": "Red Blood Cell Indices",
         "hdruk_PID": null,
-        "phekb_PID": "PP000068",
+        "phekb_PID": "PP000067",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -13250,7 +13250,7 @@
     {
         "Phenotypes": "Resistant hypertension",
         "hdruk_PID": null,
-        "phekb_PID": "PP000069",
+        "phekb_PID": "PP000068",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -13403,7 +13403,7 @@
     {
         "Phenotypes": "Rheumatoid Arthritis (RA)",
         "hdruk_PID": null,
-        "phekb_PID": "PP000070",
+        "phekb_PID": "PP000069",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -13412,7 +13412,7 @@
     {
         "Phenotypes": "Rheumatoid Arthritis - Demonstration Project",
         "hdruk_PID": null,
-        "phekb_PID": "PP000071",
+        "phekb_PID": "PP000070",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -13493,7 +13493,7 @@
     {
         "Phenotypes": "Rheumatology Auto-Immune characteristics",
         "hdruk_PID": null,
-        "phekb_PID": "PP000072",
+        "phekb_PID": "PP000071",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -13565,7 +13565,7 @@
     {
         "Phenotypes": "RxNorm RxCUI codes for Cancer Therapies",
         "hdruk_PID": null,
-        "phekb_PID": "PP000073",
+        "phekb_PID": "PP000072",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -13592,7 +13592,7 @@
     {
         "Phenotypes": "SLE (Systemic Lupus Erythematosus) using SLICC (Systemic Lupus Internation Collaborating Clinics) Criteria",
         "hdruk_PID": null,
-        "phekb_PID": "PP000076",
+        "phekb_PID": "PP000075",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -14051,7 +14051,7 @@
     {
         "Phenotypes": "Severe Early Childhood Obesity",
         "hdruk_PID": null,
-        "phekb_PID": "PP000074",
+        "phekb_PID": "PP000073",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -14150,7 +14150,7 @@
     {
         "Phenotypes": "Sickle Cell Disease",
         "hdruk_PID": null,
-        "phekb_PID": "PP000075",
+        "phekb_PID": "PP000074",
         "cprd_PID": "CP000179",
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -14267,7 +14267,7 @@
     {
         "Phenotypes": "Sleep Apnea Phenotype",
         "hdruk_PID": null,
-        "phekb_PID": "PP000077",
+        "phekb_PID": "PP000076",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -14555,7 +14555,7 @@
     {
         "Phenotypes": "Statins and MACE",
         "hdruk_PID": null,
-        "phekb_PID": "PP000078",
+        "phekb_PID": "PP000077",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -14564,7 +14564,7 @@
     {
         "Phenotypes": "Steroid Induced Osteonecrosis",
         "hdruk_PID": null,
-        "phekb_PID": "PP000079",
+        "phekb_PID": "PP000078",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -14861,7 +14861,7 @@
     {
         "Phenotypes": "Systemic lupus erythematosus (SLE)",
         "hdruk_PID": null,
-        "phekb_PID": "PP000080",
+        "phekb_PID": "PP000079",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -15257,7 +15257,7 @@
     {
         "Phenotypes": "Type 1 Diabetes",
         "hdruk_PID": "HP000935, HP000974",
-        "phekb_PID": "PP000082",
+        "phekb_PID": "PP000081",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -15275,7 +15275,7 @@
     {
         "Phenotypes": "Type 1 and type 2 Diabetes Mellitus",
         "hdruk_PID": null,
-        "phekb_PID": "PP000081",
+        "phekb_PID": "PP000080",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -15320,7 +15320,7 @@
     {
         "Phenotypes": "Type 2 Diabetes - Demonstration Project",
         "hdruk_PID": null,
-        "phekb_PID": "PP000083",
+        "phekb_PID": "PP000082",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -15329,7 +15329,7 @@
     {
         "Phenotypes": "Type 2 Diabetes - PRS Evaluation",
         "hdruk_PID": null,
-        "phekb_PID": "PP000084",
+        "phekb_PID": "PP000083",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -15338,7 +15338,7 @@
     {
         "Phenotypes": "Type 2 Diabetes Mellitus",
         "hdruk_PID": null,
-        "phekb_PID": "PP000085",
+        "phekb_PID": "PP000084",
         "cprd_PID": "CP000199",
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -15365,7 +15365,7 @@
     {
         "Phenotypes": "Type1 or Type 2 Diabetes Mellitus",
         "hdruk_PID": null,
-        "phekb_PID": "PP000086",
+        "phekb_PID": "PP000085",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -15491,7 +15491,7 @@
     {
         "Phenotypes": "Urinary Incontinence",
         "hdruk_PID": "HP000506",
-        "phekb_PID": "PP000087",
+        "phekb_PID": "PP000086",
         "cprd_PID": "CP000202",
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -15590,7 +15590,7 @@
     {
         "Phenotypes": "Venous Thromboembolism (VTE)",
         "hdruk_PID": null,
-        "phekb_PID": "PP000088",
+        "phekb_PID": "PP000087",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -15743,7 +15743,7 @@
     {
         "Phenotypes": "Warfarin dose/response",
         "hdruk_PID": null,
-        "phekb_PID": "PP000089",
+        "phekb_PID": "PP000088",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -15788,7 +15788,7 @@
     {
         "Phenotypes": "White Blood Cell Indices",
         "hdruk_PID": null,
-        "phekb_PID": "PP000090",
+        "phekb_PID": "PP000089",
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
@@ -15831,22 +15831,13 @@
         "id": "XPXXX1759"
     },
     {
-        "Phenotypes": "eMERGE GIRA Data Refresh - Spring 2025",
-        "hdruk_PID": null,
-        "phekb_PID": "PP000038",
-        "cprd_PID": null,
-        "Sentinel_PID": null,
-        "ohdsi_PID": null,
-        "id": "XPXXX1760"
-    },
-    {
         "Phenotypes": "non-cardiac congenital malformations",
         "hdruk_PID": null,
         "phekb_PID": null,
         "cprd_PID": null,
         "Sentinel_PID": "SP000068",
         "ohdsi_PID": null,
-        "id": "XXXSX1761"
+        "id": "XXXSX1760"
     },
     {
         "Phenotypes": "persons at risk at start of year 2012-2022 with 365d prior observation",
@@ -15855,7 +15846,7 @@
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": "OP000496",
-        "id": "XXXXO1762"
+        "id": "XXXXO1761"
     },
     {
         "Phenotypes": "selective serotonin reuptake inhibitor (SSRI) Adds",
@@ -15864,7 +15855,7 @@
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
-        "id": "HXXXX1763"
+        "id": "HXXXX1762"
     },
     {
         "Phenotypes": "selective serotonin reuptake inhibitor (SSRI) adds",
@@ -15873,6 +15864,6 @@
         "cprd_PID": null,
         "Sentinel_PID": null,
         "ohdsi_PID": null,
-        "id": "HXXXX1764"
+        "id": "HXXXX1763"
     }
 ]
