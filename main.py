@@ -27,7 +27,7 @@ try:
     logger.debug(f"SENTINEL DETAIL FILE APPENDED")
 except:
     logger.exception("AN ERROR OCCURRED WHILE RUNNING THE SENTINEL PIPELINE")
-
+ 
 # #HDRUK
 try:
     logger.info("STARTING HDRUK PIPELINE...")

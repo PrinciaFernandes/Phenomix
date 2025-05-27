@@ -1,5 +1,10 @@
+import sys
+from pathlib import Path
+
+
+sys.path.append(str(Path(__file__).resolve().parent.parent / 'src'))
+
 import streamlit as st
-import time
 from views.phenosearch import pheno_search
 from views.graph import graph_view
 from views.table import table_view
