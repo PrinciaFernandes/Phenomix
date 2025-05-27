@@ -53,8 +53,8 @@ def pheno_search(phenotype_input):
                     st.markdown(f"### 📄 Detail for PID: {selected_pid}")
                     st.markdown(
                         f"""
-                        <div style='color: #000080; border: 2px solid #4CAF50; padding: 15px; height: 200px; overflow-y: auto;
-                                    background-color:#f4eeff ; border-radius: 10px; margin-bottom: 20px;'>
+                        <div style='color: #ffffff; border: 2px solid #4CAF50; padding: 15px; height: 200px; overflow-y: auto;
+                                    background-color:#000000 ; border-radius: 10px; margin-bottom: 20px;'>
                             <b>Detail Properties:</b><br>
                             {"<br>".join([f"{k}: {v}" for k, v in selected_detail.items()])}
                         </div>
@@ -71,8 +71,8 @@ def pheno_search(phenotype_input):
                         ])
                         st.markdown(
                             f"""
-                            <div style='color: #000080; border: 2px solid #2196F3; padding: 15px; height: 300px; overflow-y: auto;
-                                        background-color: #d9f2ff; border-radius: 10px;'>
+                            <div style='color: #ffffff; border: 2px solid #2196F3; padding: 15px; height: 300px; overflow-y: auto;
+                                        background-color: #000000; border-radius: 10px;'>
                                 {concept_html}
                             </div>
                             """,

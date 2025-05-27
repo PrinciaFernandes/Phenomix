@@ -1,39 +1,78 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 import streamlit as st
+
+# Enhanced page configuration (rest remains the same)
+st.set_page_config(
+    page_title="PHENOTYPE EXPLORER",
+    layout="wide",
+    page_icon="🧬",
+    initial_sidebar_state="expanded"
+)
+
+# Import the CSS function from style.py
+from style import apply_custom_css
+
 import time
 from views.phenosearch import pheno_search
 from views.graph import graph_view
 from views.table import table_view
-from views.dynamic import dynamic_search,get_cypher
+from views.dynamic import dynamic_search, get_cypher
 
+# Apply the custom CSS
+apply_custom_css()
 
-st.set_page_config(page_title="Phenotype Explorer",layout="centered",page_icon=r"streamlit_file\assets\pheno_image.png")
+# Enhanced sidebar with better styling
+with st.sidebar:
+    try:
+        st.image(r'streamlit_file\assets\icon.png', use_container_width=True)
+    except:
+        st.markdown("🧬", unsafe_allow_html=True)  # Fallback icon with better styling
+    st.markdown("</div>", unsafe_allow_html=True)
 
-st.sidebar.image(r'streamlit_file\assets\icon.png', use_container_width=True)
-page = st.sidebar.radio("Pages",["Phenomix Explorer","Phenomix Assistant"],index = 0)
+    page = st.radio(
+        "🌌 Navigation",
+        ["Phenomix Explorer", "Phenomix Assistant"],
+        index=0,
+        help="Choose your exploration mode for advanced phenotype analysis"
+    )
 
-if page =='Phenomix Explorer':
-    st.title("🔍︎ Phenotype Explorer")
-    phenotype_input = st.text_input("Enter Phenotype Name :",None)
+if page == 'Phenomix Explorer':
+    # Enhanced title with animation
+    st.markdown("<h1 class='main-title'>PHENOTYPE EXPLORER</h1>", unsafe_allow_html=True)
 
-    col1,col2,col3=st.columns(3)
+    # Add a subtle divider
+    st.markdown("<div class='section-divider'></div>", unsafe_allow_html=True)
+
+    # Enhanced input with better UX
+    st.markdown("<div style='margin: 1.5rem 0; font-size: 2rem; '>", unsafe_allow_html=True)
+    phenotype_input = st.text_input(
+        "ENTER PHENOTYPE:",
+        placeholder="Search phenotypes (e.g., COPD, Asthma, Diabetes)...",
+        help="Enter the name of the phenotype you want to analyze in detail"
+    )
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    # Enhanced button layout with better spacing
+    st.markdown("<div class='button-container'>", unsafe_allow_html=True)
+    col1, col2, col3 = st.columns(3, gap="medium")
+
     with col1:
-        button1 = st.button("Document view", key="document_button",use_container_width=True)
+        button1 = st.button("📄 Document View", key="document_button", use_container_width=True)
     with col2:
-        button2 = st.button("Table view", key="table_button",use_container_width=True)
-    with col3:    
-        button3 = st.button("Graph view", key="graph_button",use_container_width=True)
+        button2 = st.button("📊 Table View", key="table_button", use_container_width=True)
+    with col3:
+        button3 = st.button("🕸️ Graph View", key="graph_button", use_container_width=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
+    # Session state management (unchanged logic)
     if "document_clicked" not in st.session_state:
         st.session_state.document_clicked = False
     if "table_clicked" not in st.session_state:
         st.session_state.table_clicked = False
     if "graph_clicked" not in st.session_state:
         st.session_state.graph_clicked = False
-        
 
     if button1:
         st.session_state.document_clicked = True
@@ -50,57 +89,92 @@ if page =='Phenomix Explorer':
         st.session_state.document_clicked = False
         st.session_state.table_clicked = False
 
-
+    # Add loading animation and better error handling
     if st.session_state.document_clicked and phenotype_input:
-        try:
-            pheno_search(phenotype_input)
-        except:
-            st.warning("⚠️ Unable to load this phenotype")
+        with st.spinner('🔍 Fetching document view...'):
+            try:
+                pheno_search(phenotype_input)
+            except Exception as e:
+                st.error(f"⚠️ Error loading document view: {e}")
 
     if st.session_state.table_clicked and phenotype_input:
-        try:
-            table_view(phenotype_input)
-        except:
-            st.warning("⚠️ Unable to load this phenotype")
+        with st.spinner('📊 Generating table view...'):
+            try:
+                table_view(phenotype_input)
+            except Exception as e:
+                st.error(f"⚠️ Error generating table view: {e}")
 
     if st.session_state.graph_clicked and phenotype_input:
-        try:
-            graph_view(phenotype_input)
-        except:
-            st.warning("⚠️ Unable to load this phenotype")
+        with st.spinner('🕸️ Building graph visualization...'):
+            try:
+                graph_view(phenotype_input)
+            except Exception as e:
+                st.error(f"⚠️ Error building graph view: {e}")
 
 elif page == 'Phenomix Assistant':
-    st.title("👩🏻‍💻 Phenomix Assistant")
-    st.write("Example Questions :  \n"
-    "1.Give defination for the phenotype 'COPD'?  \n"
-    "2.Give all website in which phenotype 'Asthma' is present?  \n"
-    "3.What is the phenotype name of this PID='CP000002'?  \n"
-    "4.How many phenotypes are there in 'PHEKB' website?  \n"
-    "5.Give the data source and publications of phenotype 'Anxiety Disorder'?")
-    
+    # Enhanced assistant page
+    st.markdown("<h1 class='assistant-title'> PHENOMIX ASSISTANT</h1>", unsafe_allow_html=True)
+    st.markdown("<div class='section-divider'></div>", unsafe_allow_html=True)
+
+    # Enhanced example questions section
+    st.markdown("""
+    <div class='example-questions'>
+        <h3>💡 Try Asking These:</h3>
+        <div style='line-height: 1.7;'>
+            <p><strong>1.</strong> What is the definition of 'COPD'?</p>
+            <p><strong>2.</strong> Which websites mention 'Asthma'?</p>
+            <p><strong>3.</strong> What phenotype has the ID 'CP000002'?</p>
+            <p><strong>4.</strong> How many phenotypes are in the 'PHEKB' database?</p>
+            <p><strong>5.</strong> Tell me about the data sources for 'Anxiety Disorder'.</p>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Initialize chat history
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
-    
-    query = st.chat_input("Your query")
 
+    # Enhanced chat input
+    query =st.chat_input("Ask me anything about phenotypes...")
     if query:
-        response = dynamic_search(query)
-        col1, col2 = st.columns(2)
-        
-        cypher = get_cypher(query)
+        with st.spinner('🧠 Processing...'):
+            response = dynamic_search(query)
+            cypher = get_cypher(query)
+            st.session_state.chat_history.append((query, response, cypher))
 
-        st.session_state.chat_history.append((query,response,cypher))
-        container = st.container()
-        
-        for user_input, result, query in st.session_state.chat_history:
+    # Enhanced chat display
+    if st.session_state.chat_history:
+        st.markdown("<div style='margin: 1.5rem 0;'></div>", unsafe_allow_html=True)
+        for i, (user_input, result, query_cypher) in enumerate(st.session_state.chat_history):
             query_result = result['result']
 
-            with container.expander(f"You", expanded = True):
-                st.markdown(user_input)
+            # User message
+            with st.expander(f"👤 You asked:", expanded=True):
+                st.markdown(f"**{user_input}**")
 
-            with container.expander(f"Assistant", expanded = True):
+            # Assistant response
+            with st.expander(f"🤖 Assistant replied:", expanded=True):
                 st.markdown(query_result)
 
-            with container.expander(f"Cypher Query", expanded = True):
-                st.markdown(query)
-            
+            # Cypher query (for developers)
+            with st.expander(f"⚙️ Generated Cypher:", expanded=False):
+                st.code(query_cypher, language='cypher')
+
+            # Add separator between conversations
+            if i < len(st.session_state.chat_history) - 1:
+                st.markdown("<div class='section-divider'></div>", unsafe_allow_html=True)
+
+# Add enhanced footer for dark theme
+if page == 'Phenomix Explorer':
+    st.markdown("""
+    <div class='footer-container'>
+        <div class='footer-content'>
+            <p>
+                Exploring the Landscape of Phenotypes
+            </p>
+            <p class='crafted-with'>
+                Crafted with <span class='heart'>❤️</span> for Discovery
+            </p>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
