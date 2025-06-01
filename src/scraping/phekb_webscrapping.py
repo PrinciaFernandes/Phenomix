@@ -15,6 +15,7 @@ chrome_options.add_argument("--no-sandbox")
 
 
 def phekb_scrapping(base_url):
+    print("Entered Scraping PHEKB")
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=chrome_options)
     driver.get(base_url)

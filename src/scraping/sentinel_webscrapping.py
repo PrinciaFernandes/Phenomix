@@ -95,15 +95,16 @@ def phenotype(pdf_url):
     response = requests.get(pdf_url)
     pdf_content = response.content
     pdf_path = io.BytesIO(pdf_content)
-
-    if not 'algorithm_Critical_COVID_updated.pdf' in pdf_path:
-        overview = overview_extract(pdf_path)
-        description = description_extract(pdf_path)
-        phenotype_dict = json.loads(overview)
-        phenotype_dict['Code_Description'] = description
-    else:
-        phenotype_dict = extract_exceptionl(pdf_path)
-
+    try:
+        if not 'algorithm_Critical_COVID_updated.pdf' in pdf_path:
+            overview = overview_extract(pdf_path)
+            description = description_extract(pdf_path)
+            phenotype_dict = json.loads(overview)
+            phenotype_dict['Code_Description'] = description
+        else:
+            phenotype_dict = extract_exceptionl(pdf_path)
+    except:
+        return f"Error in Calling PDF Extraction function for {pdf_url}"
     return phenotype_dict
 
 
