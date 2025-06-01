@@ -3,18 +3,18 @@
 def transform_detail(detail_files):
     new_detail = []
     for dict in detail_files:
-        d = {}
+        detail_dict = {}
         if 'Outcome' in dict.keys(): 
-            d['Name'] = dict['Outcome']
+            detail_dict['Name'] = dict['Outcome']
         elif 'Disease' in dict.keys():
-            d['Name'] = dict['Disease']
+            detail_dict['Name'] = dict['Disease']
         elif "Cohort_name" in dict.keys():
-            d['Name'] = dict["Cohort_name"]
+            detail_dict['Name'] = dict["Cohort_name"]
         else:
-            d['Name'] = dict['Name']
+            detail_dict['Name'] = dict['Name']
         if 'PID' in dict.keys():
-            d['PID'] = dict['PID']
-        new_detail.append(d)
+            detail_dict['PID'] = dict['PID']
+        new_detail.append(detail_dict  )
     return new_detail
 
 
@@ -34,33 +34,33 @@ def create_masterlist(combined_detail):
     for detail in combined_detail:
         if detail['Name'] not in name_list:
             name_list.append(detail['Name'])
-            d = {k:None for k in keys}
-            d[keys[0]] = detail['Name']
+            detail_dict = {k:None for k in keys}
+            detail_dict[keys[0]] = detail['Name']
             pid_key = get_pid_key(detail['PID'])
-            d[pid_key] = detail['PID']
-            masterlist.append(d)
+            detail_dict[pid_key] = detail['PID']
+            masterlist.append(detail_dict)
         else:
 
             pid_key = get_pid_key(detail['PID'])
-            for d in masterlist:
-                if d[keys[0]] == detail['Name']:
-                    if not d[pid_key] is None:
-                        d[pid_key] = d[pid_key] + f', {detail['PID']}' 
+            for dict in masterlist:
+                if dict[keys[0]] == detail['Name']:
+                    if not dict[pid_key] is None:
+                        dict[pid_key] = dict[pid_key] + f', {detail["PID"]}' 
                     else:
-                        d[pid_key] = detail['PID']
-    sorted_masterlist = sorted(masterlist,key = lambda x:x['Phenotypes'])
+                        dict[pid_key] = detail['PID']
+    sorted_masterlist = sorted(masterlist, key=lambda x:x['Phenotypes'])
     id = 0
-    for d in sorted_masterlist:
+    for dict in sorted_masterlist:
         id += 1
-        
-        v1 = 'H' if d['hdruk_PID'] is not None else 'X'
-        v2 = 'P' if d['phekb_PID'] is not None else 'X'
-        v3 = 'C' if d['cprd_PID'] is not None else 'X'
-        v4 = 'S' if d['Sentinel_PID'] is not None else 'X'
-        v5 = 'O' if d['ohdsi_PID'] is not None else 'X'
 
-        d['id'] = f'{v1}{v2}{v3}{v4}{v5}{id:04d}'
-    
+        v1 = 'H' if dict['hdruk_PID'] is not None else 'X'
+        v2 = 'P' if dict['phekb_PID'] is not None else 'X'
+        v3 = 'C' if dict['cprd_PID'] is not None else 'X'
+        v4 = 'S' if dict['Sentinel_PID'] is not None else 'X'
+        v5 = 'O' if dict['ohdsi_PID'] is not None else 'X'
+
+        dict['id'] = f'{v1}{v2}{v3}{v4}{v5}{id:04d}'
+
     return sorted_masterlist
 
 

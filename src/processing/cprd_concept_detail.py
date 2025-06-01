@@ -4,12 +4,12 @@ def get_detail(cprd):
     hdruk_detail = []
     disease_list = []
     for pheno in cprd:
-        if pheno['disease'] not in disease_list:
-            disease_list.append(pheno['disease'])
+        if pheno.get('disease') not in disease_list:
+            disease_list.append(pheno.get('disease', 'Unknown'))
             i += 1
             detail_dictionary = {}
-            detail_dictionary['Disease'] = pheno['disease']
-            detail_dictionary['Disease_num'] = pheno['disease_num']
+            detail_dictionary['Disease'] = pheno.get('disease','Unknown')
+            detail_dictionary['Disease_num'] = pheno.get('disease_num','Unknown')
             detail_dictionary['PID'] = f'CP{i:06d}'
             hdruk_detail.append(detail_dictionary)
     return hdruk_detail
@@ -20,37 +20,37 @@ def get_concept(cprd,detail):
     hdruk_concept = []
     disease_code_list = []
     for pheno in cprd:
-        if pheno['read code'] not in disease_code_list:
+        if pheno.get('read code') not in disease_code_list:
             concept_dctionary = {}
-            disease_code_list.append(pheno['read code'])
-            concept_dctionary['Read_code'] = str(pheno['read code'])
-            concept_dctionary['Description'] = pheno['descr']
-            concept_dctionary['Med_code'] = [pheno['medcode']]
-            concept_dctionary['Category'] = [pheno['category']]
-            concept_dctionary['System'] = [pheno['system']]
-            concept_dctionary['System_num'] = [pheno['system_num']]
-            concept_dctionary['Med_code_id'] = [pheno['medcodeid']]
-            concept_dctionary['Snomed_ct_concept_id'] = [pheno['snomedctconceptid']]
-            concept_dctionary['Snomed_ct_description_id'] = [pheno['snomedctdescriptionid']]
-            concept_dctionary['Mapping'] = [pheno['mapping']]
-            concept_dctionary['Disease'] = [pheno['disease']]
-            concept_dctionary['Disease_num'] = [pheno['disease_num']]
-            concept_dctionary['PIDs'] = [dict['PID'] for dict in detail if dict['Disease'] == pheno['disease']]
+            disease_code_list.append(pheno.get('read code',None))
+            concept_dctionary['Read_code'] = str(pheno.get('read code',None))
+            concept_dctionary['Description'] = pheno.get('descr',None)
+            concept_dctionary['Med_code'] = [pheno.get('medcode', None)]
+            concept_dctionary['Category'] = [pheno.get('category', None)]
+            concept_dctionary['System'] = [pheno.get('system', None)]
+            concept_dctionary['System_num'] = [pheno.get('system_num', None)]
+            concept_dctionary['Med_code_id'] = [pheno.get('medcodeid', None)]
+            concept_dctionary['Snomed_ct_concept_id'] = [pheno.get('snomedctconceptid', None)]
+            concept_dctionary['Snomed_ct_description_id'] = [pheno.get('snomedctdescriptionid', None)]
+            concept_dctionary['Mapping'] = [pheno.get('mapping', None)]
+            concept_dctionary['Disease'] = [pheno.get('disease', None)]
+            concept_dctionary['Disease_num'] = [pheno.get('disease_num', None)]
+            concept_dctionary['PIDs'] = [dict.get('PID') for dict in detail if dict.get('Disease') == pheno.get('disease', None)]
             hdruk_concept.append(concept_dctionary)
 
         else: 
             for concept in hdruk_concept: 
                 if concept['Disease'] == pheno['disease']:
-                    concept['Med_code'].append(pheno['medcode']) 
-                    concept['Category'].append(pheno['category'])
-                    concept['System'].append(pheno['system'])
-                    concept['System_num'].append(pheno['system_num']) 
-                    concept['Med_code_id'].append(pheno['medcodeid'])
-                    concept['Snomed_ct_concept_id'].append(pheno['snomedctconceptid']) 
-                    concept['Snomed_ct_description_id'].append(pheno['snomedctdescriptionid']) 
-                    concept['Mapping'].append(pheno['mapping']) 
-                    concept['Disease'].append(pheno['disease']) 
-                    concept['Disease_num'].append(pheno['disease_num']) 
+                    concept['Med_code'].append(pheno.get('medcode', None)) 
+                    concept['Category'].append(pheno.get('category', None))
+                    concept['System'].append(pheno.get('system', None))
+                    concept['System_num'].append(pheno.get('system_num', None)) 
+                    concept['Med_code_id'].append(pheno.get('medcodeid', None))
+                    concept['Snomed_ct_concept_id'].append(pheno.get('snomedctconceptid', None)) 
+                    concept['Snomed_ct_description_id'].append(pheno.get('snomedctdescriptionid', None)) 
+                    concept['Mapping'].append(pheno.get('mapping', None)) 
+                    concept['Disease'].append(pheno.get('disease', None)) 
+                    concept['Disease_num'].append(pheno.get('disease_num', None)) 
                     concept['PIDs'].extend([dict['PID'] for dict in detail if dict['Disease'] == pheno['Disease']])
 
     sorted_concept = sorted(hdruk_concept,key = lambda x: x['Read_code'])

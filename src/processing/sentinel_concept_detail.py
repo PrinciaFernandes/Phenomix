@@ -34,29 +34,30 @@ def get_detail(sentinel):
     sentinel_detail = []
 
     for phenotype in sentinel:
-        if phenotype['Overview']['Outcome'] not in outcome_list:
-            outcome_list.append(phenotype['Overview']['Outcome'])        
+        phenotype_overview = phenotype['Overview']
+        if phenotype_overview['Outcome'] not in outcome_list:
+            outcome_list.append(phenotype_overview['Outcome'])        
             detail_dictionary = {}
-            detail_dictionary['Outcome'] = phenotype['Overview']['Outcome']
-            detail_dictionary['Title'] = phenotype['Overview']['Title']
-            detail_dictionary['Request_id'] = phenotype['Overview']['Request IDs'] if phenotype['Overview']['Request IDs'] else 'NA'
-            detail_dictionary['Query_start_date'],detail_dictionary['Query_end_date'] = get_query_date(phenotype['Overview']['Query period'])
-            detail_dictionary['Description'] = phenotype['Overview']['Description']
-            detail_dictionary['Algorithm_to_define_outcome'] = phenotype['Overview']['Algorithm to define outcome']
-            detail_dictionary['Request_send_date'] = get_request_date(phenotype['Overview']['Request to send dates'])
+            detail_dictionary['Outcome'] = phenotype_overview.get('Outcome', 'NA')
+            detail_dictionary['Title'] = phenotype_overview.get('Title', 'NA')
+            detail_dictionary['Request_id'] = phenotype_overview.get('Request IDs', 'NA')
+            detail_dictionary['Query_start_date'],detail_dictionary['Query_end_date'] = get_query_date(phenotype_overview.get('Query period', 'NA'))
+            detail_dictionary['Description'] = phenotype_overview.get('Description', 'NA')
+            detail_dictionary['Algorithm_to_define_outcome'] = phenotype_overview.get('Algorithm to define outcome', 'NA')
+            detail_dictionary['Request_send_date'] = get_request_date(phenotype_overview.get('Request to send dates', 'NA'))
             sentinel_detail.append(detail_dictionary)
         else:
             for detail in sentinel_detail:
-                if detail['Outcome'] == phenotype['Overview']['Outcome']:
-                    detail['Title'] = detail['Title']+ f' \n {phenotype['Overview']['Title']}' 
-                    detail['Request_id'] = detail['Request_id']+ f' \n {phenotype['Overview']['Request IDs']}' 
-                    query_start_date,query_end_date = get_query_date(phenotype['Overview']['Request to send dates'])
+                if detail['Outcome'] == phenotype_overview['Outcome']:
+                    detail['Title'] = detail['Title']+ f' \n {phenotype_overview.get('Title', 'NA')}'
+                    detail['Request_id'] = detail['Request_id']+ f' \n {phenotype_overview.get('Request IDs', 'NA')}'
+                    query_start_date,query_end_date = get_query_date(phenotype_overview.get('Request to send dates', 'NA'))
                     detail['Query_start_date'] = detail['Query_start_date']+ f' \n {query_start_date}'
                     detail['Query_end_date'] = detail['Query_end_date']+ f' \n {query_end_date}' 
-                    detail['Description'] = detail['Description']+ f' \n {phenotype['Overview']['Description']}' 
-                    detail['Algorithm_to_define_outcome'] = detail['Algorithm_to_define_outcome']+ f' \n {phenotype['Overview']['Algorithm to define outcome']}' 
-                    detail['Request_send_date'] = detail['Request_send_date']+ f' \n {get_request_date(phenotype['Overview']['Request to send dates'])}' 
-        
+                    detail['Description'] = detail['Description']+ f' \n {phenotype_overview.get('Description', 'NA')}' 
+                    detail['Algorithm_to_define_outcome'] = detail['Algorithm_to_define_outcome']+ f' \n {phenotype_overview.get('Algorithm to define outcome', 'NA')}' 
+                    detail['Request_send_date'] = detail['Request_send_date']+ f' \n {get_request_date(phenotype_overview.get('Request to send dates', 'NA'))}' 
+
     sorted_detail = sorted(sentinel_detail,key = lambda x: x['Outcome'])
 
     i = 0
@@ -74,26 +75,26 @@ def get_concept(sentinel,detail):
             if codes['Code'] not in code_list:
                 code_list.append(codes['Code'])
                 concept_dictioanry = {}
-                concept_dictioanry['Code'] =  codes['Code']
-                concept_dictioanry['Description'] = codes['Description'] if codes['Description'] else ['NA']
-                concept_dictioanry['Care_setting'] = [codes['Care_setting']] if 'Care_setting' in codes.keys() else ['NA']
-                concept_dictioanry['Code_type']= [codes['Code_Type']] if 'Code_Type' in codes.keys() else ['NA']
-                concept_dictioanry['Code_category']= [codes['Code_Category']] if 'Code_Category' in codes.keys() else ['NA']
-                concept_dictioanry['Principal_diagnosis']= [codes['Principal diagnosis']] if 'Principal_diagnosis' in codes.keys() else ['NA']
-                concept_dictioanry['Outcome']= [phenotype['Overview']['Outcome']]
-                concept_dictioanry['Request_id']= [phenotype['Overview']['Request IDs']]
-                concept_dictioanry['PIDs']= [d['PID'] for d in detail if d['Outcome'] == phenotype['Overview']['Outcome']]
+                concept_dictioanry['Code'] =  codes.get('Code', 'NA')
+                concept_dictioanry['Description'] = codes.get('Description', 'NA')
+                concept_dictioanry['Care_setting'] = [codes.get('Care_setting', 'NA')]
+                concept_dictioanry['Code_type']= [codes.get('Code_Type', 'NA')]
+                concept_dictioanry['Code_category']= [codes.get('Code_Category', 'NA')]
+                concept_dictioanry['Principal_diagnosis']= [codes.get('Principal diagnosis', 'NA')]
+                concept_dictioanry['Outcome']= [phenotype['Overview'].get('Outcome', 'NA')]
+                concept_dictioanry['Request_id']= [phenotype['Overview'].get('Request IDs', 'NA')]
+                concept_dictioanry['PIDs']= [item['PID'] for item in detail if item['Outcome'] == phenotype['Overview'].get('Outcome', 'NA')]
                 sentinel_concept.append(concept_dictioanry)
             else:
                 for concept in sentinel_concept:
                     if concept['Code'] == codes['Code']:
-                        concept['Care_setting'].append(codes['Care_setting']) if 'Care_setting' in codes.keys() else concept['Care_setting'].append('NA')
-                        concept['Code_type'].append(codes['Code_Type']) if 'Code_Type' in codes.keys() else concept['Code_type'].append('NA')
-                        concept['Code_category'].append(codes['Code_Category']) if 'Code_Category' in codes.keys() else concept['Code_category'].append('NA')
-                        concept['Principal_diagnosis'].append(codes['Principal_diagnosis']) if 'Principal_diagnosis' in codes.keys() else concept['Principal_diagnosis'].append('NA')
-                        concept['Outcome'].append(phenotype['Overview']['Outcome'])
-                        concept['Request_id'].append(phenotype['Overview']['Request IDs']) if phenotype['Overview']['Request IDs'] else concept['Request_id'].append('NA')
-                        concept['PIDs'].extend([d['PID'] for d in detail if d['Outcome'] == phenotype['Overview']['Outcome']])
+                        concept['Care_setting'].append(codes.get('Care_setting', 'NA'))
+                        concept['Code_type'].append(codes.get('Code_Type', 'NA'))
+                        concept['Code_category'].append(codes.get('Code_Category', 'NA'))
+                        concept['Principal_diagnosis'].append(codes.get('Principal_diagnosis', 'NA'))
+                        concept['Outcome'].append(phenotype['Overview'].get('Outcome', 'NA'))
+                        concept['Request_id'].append(phenotype['Overview'].get('Request IDs', 'NA'))
+                        concept['PIDs'].extend([item['PID'] for item in detail if item['Outcome'] == phenotype['Overview'].get('Outcome', 'NA')])
 
     sorted_concept = sorted(sentinel_concept,key = lambda x: x['Code'])
     i = 0

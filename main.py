@@ -28,7 +28,7 @@ try:
 except:
     logger.exception("AN ERROR OCCURRED WHILE RUNNING THE SENTINEL PIPELINE")
 
-# #HDRUK
+#HDRUK
 try:
     logger.info("STARTING HDRUK PIPELINE...")
     hdruk_obj = HDRUKPipeline()
@@ -41,7 +41,7 @@ except:
     logger.exception("AN ERROR OCCURRED WHILE RUNNING THE HDRUK PIPELINE")
 
 
-# #CPRD
+#CPRD
 try:
     logger.info("STARTING CPRD PIPELINE...")
     cprd_obj = CPRDPipeline()
@@ -77,40 +77,6 @@ try:
     logger.debug(f"OHDSI DETAIL FILE APPENDED")
 except:
     logger.exception("AN ERROR OCCURRED WHILE RUNNING THE OHDSI PIPELINE")  
-
-
-# def get_detail_files(dir:str)->list:
-#     logger.info("Extracting detail files")
-
-#     detail_files = []
-#     websites = ['CPRD','HDRUK','OHDSI','PHEKB','SENTINEL']
-#     for files in os.listdir(dir):
-#         if files in websites:
-#             file_path = os.path.join(dir,files)
-#             for detail in os.listdir(file_path):
-#                 if '_detail.json' in detail:
-#                     with open(os.path.join(file_path,detail),'r') as f:
-#                         file_content = f.read()
-#                     detail_files.extend(json.loads(file_content))
-#     return detail_files
-
-# def get_concept_files(dir:str)->list:
-#     logger.info("Extracting concept files")
-
-#     concept_files = []
-#     websites = ['CPRD','HDRUK','OHDSI','PHEKB','SENTINEL']
-#     for files in os.listdir(dir):
-#         if files in websites:
-#             file_path = os.path.join(dir,files)
-#             for detail in os.listdir(file_path):
-#                 if '_concept.json' in detail:
-#                     with open(os.path.join(file_path,detail),'r') as f:
-#                         file_content = f.read()
-#                     concept_files.extend(json.loads(file_content))
-#     return concept_files
-
-# detail_files = get_detail_files(PROCESSED_DIR)
-# concept_files = get_concept_files(PROCESSED_DIR)
 
 #MASTERLIST
 try:

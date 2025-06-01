@@ -11,3 +11,6 @@ bs4
 python-dotenv==0.21.0
 neo4j==5.28.1
 pyvis==0.3.1
+langchain-google-genai==2.1.4
+langchain_neo4j==0.4.0
+streamlit==1.45.1

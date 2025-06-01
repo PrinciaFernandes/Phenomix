@@ -56,7 +56,7 @@ def table_view(phenotype_input):
                     <div style='color: #000080; border: 2px solid #4CAF50; padding: 15px; height: 200px; overflow-y: auto;
                                 background-color:#f4eeff ; border-radius: 10px; margin-bottom: 20px;'>
                         <b>Detail Properties:</b><br>
-                        {"<br>".join([f"{k}: {v}" for k, v in selected_detail.items()])}
+                        {"<br>".join([f"{key}: {value}" for key, value in selected_detail.items()])}
                     </div>
                     """,
                     unsafe_allow_html=True
