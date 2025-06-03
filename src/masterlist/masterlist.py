@@ -34,7 +34,7 @@ def create_masterlist(combined_detail):
     for detail in combined_detail:
         if detail['Name'] not in name_list:
             name_list.append(detail['Name'])
-            detail_dict = {k:None for k in keys}
+            detail_dict = {key:None for key in keys}
             detail_dict[keys[0]] = detail['Name']
             pid_key = get_pid_key(detail['PID'])
             detail_dict[pid_key] = detail['PID']

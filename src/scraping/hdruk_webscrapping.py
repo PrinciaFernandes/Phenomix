@@ -1,11 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
-
+from pyconceptlibraryclient import client
 
 def hdruk_scrapping(base_url,client):
     hdruk = []
 
-    for page in range(1,62):
+    for page in range(1,63):
         url = f"{base_url}{page}"
         response = requests.get(url)
         print("Page:",page)
