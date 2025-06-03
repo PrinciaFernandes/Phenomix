@@ -64,33 +64,11 @@ def table_view(phenotype_input):
                         unsafe_allow_html=True
                     )
 
-<<<<<<< HEAD:streamlit/views/table.py
-                # Detail Container
-                st.markdown(f"### 📄 Detail for PID: {selected_pid}")
-                st.markdown(
-                    f"""
-                    <div style='color: #000080; border: 2px solid #4CAF50; padding: 15px; height: 200px; overflow-y: auto;
-                                background-color:#f4eeff ; border-radius: 10px; margin-bottom: 20px;'>
-                        <b>Detail Properties:</b><br>
-                        {"<br>".join([f"{key}: {value}" for key, value in selected_detail.items()])}
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
-
-                if selected_pid:
-                # Concepts Container
-                    st.markdown(f"### 🗃️ Concept table for PID: {selected_pid}")
-                    related_concepts = get_concepts_for_pid(selected_pid)
-                    st.dataframe(related_concepts,use_container_width=True,height=500)  
-                    
-=======
                     if selected_pid:
                     # Concepts Container
                         st.markdown(f"### 🗃️ Concept table for PID: {selected_pid}")
                         related_concepts = get_concepts_for_pid(selected_pid)
                         st.dataframe(related_concepts,use_container_width=True,height=500)  
                         
->>>>>>> 45543f2c4b357c8bc8cc729a21bca931af7b283d:streamlit_file/views/table.py
     else:
         st.warning("⚠️ No websites found for this phenotype.")

@@ -48,32 +48,9 @@ def pheno_search(phenotype_input):
                 selected_detail = next((item["props"] for item in pid_data if item["pid"] == selected_pid), None)
                 related_concepts = get_concepts_for_pid(selected_pid)
 
-<<<<<<< HEAD:streamlit/views/phenosearch.py
-                # Detail Container
-                st.markdown(f"### 📄 Detail for PID: {selected_pid}")
-                st.markdown(
-                    f"""
-                    <div style='color: #000080; border: 2px solid #4CAF50; padding: 15px; height: 200px; overflow-y: auto;
-                                background-color:#f4eeff ; border-radius: 10px; margin-bottom: 20px;'>
-                        <b>Detail Properties:</b><br>
-                        {"<br>".join([f"{key}: {value}" for key, value in selected_detail.items()])}
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
-
-                # Concepts Container
-                st.markdown(f"### 🗃️ Concepts for PID: {selected_pid}")
-                if related_concepts:
-                    concept_html = "<br>".join([
-                        f"<b>Concept {i+1}</b><br>" + "<br>".join([f"{key}: {value}" for key, value in concept.items()]) + "<br><hr>"
-                        for i, concept in enumerate(related_concepts)
-                    ])
-=======
                 if selected_website != "" and selected_pid != "" :
                     # Detail Container
                     st.markdown(f"### 📄 Detail for PID: {selected_pid}")
->>>>>>> 45543f2c4b357c8bc8cc729a21bca931af7b283d:streamlit_file/views/phenosearch.py
                     st.markdown(
                         f"""
                         <div style='color: #ffffff; border: 2px solid #4CAF50; padding: 15px; height: 200px; overflow-y: auto;
