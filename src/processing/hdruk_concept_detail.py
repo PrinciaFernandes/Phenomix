@@ -60,7 +60,7 @@ def get_detail(hdruk):
         detail_dictionary["Citation_requirements"] = detail.get("citation_requirements","NA")
         detail_dictionary["Created"] = detail.get("created","NA")
         detail_dictionary["author"] = detail.get("author","NA")
-        detail_dictionary["Collections"] = [name['name'] for name in detail.get('collections', [])]
+        detail_dictionary["Collections"] = [item['name'] for item in detail.get('collections', [])]
         detail_dictionary["Tags"] = detail.get("tags","NA")
         detail_dictionary["Group"] = detail.get("group","NA")
         detail_dictionary["Group_access"] = int(detail.get("group_access","NA"))

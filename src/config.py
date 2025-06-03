@@ -2,7 +2,7 @@
 CPRD_URL = "https://api.github.com/repos/annalhead/CPRD_multimorbidity_codelists/contents/codelists"
 SENTINEL_URL = 'https://www.sentinelinitiative.org/methods-data-tools/health-outcomes-interest?1=Outcomes+Assessed+in+Inferential+Analyses'
 PHEKB_URL = "https://phekb.org/phenotypes"
-HDRUK_URL = "https://phenotypes.healthdatagateway.org/phenotypes?page="
+HDRUK_URL = "https://phenotypes.healthdatagateway.org/phenotypes/"
 
 RAW_DIR = r'data\raw'
 PROCESSED_DIR = r'data\processed'
