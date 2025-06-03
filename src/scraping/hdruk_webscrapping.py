@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
+from pyconceptlibraryclient import client
 
 def hdruk_scrapping(base_url,client):
     hdruk = []

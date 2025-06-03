@@ -12,6 +12,8 @@ def get_detail(cprd):
             detail_dictionary['Disease_num'] = pheno.get('disease_num','Unknown')
             detail_dictionary['PID'] = f'CP{i:06d}'
             hdruk_detail.append(detail_dictionary)
+        else:
+            continue
     return hdruk_detail
 
 

@@ -55,10 +55,8 @@ def description_extract(pdf_path):
                     columns = codes[0].split("|")
                     for row in codes[1:]:
                         rows = row.split("|")
-                        d ={}
-                        for k,v in zip(columns,rows):
-                            d[k] = v
-                        phenotype_description.append(d)
+                        dictionary = {key:value for key,value in zip(columns,rows)}
+                        phenotype_description.append(dictionary)
                     description_dict += phenotype_description
                 else:
                     continue
@@ -85,7 +83,7 @@ def extract_exceptionl(pdf_path):
             columns = codes[0].split("|")
             for row in codes[1:]:
                 rows = row.split("|")
-                code_dictionary ={k:v for k,v in zip(columns,rows)}
+                code_dictionary ={key:value for key,value in zip(columns,rows)}
                 phenotype.append(code_dictionary)
     phenotype_dict = json.loads(overview)
     phenotype_dict["Code_Description"] = phenotype
@@ -122,6 +120,8 @@ def sentinel_scrapping(base_url):
                 
                 if "Outcomes Assessed in Inferential Analyses" in soup_page.get_text():
                     page_links.append(full_link)
+        else:
+            continue
     i = 0              
     for link in page_links:
         content = requests.get(link)
