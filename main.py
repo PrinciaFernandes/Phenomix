@@ -16,7 +16,7 @@ detail_files = []
 concept_files = []
 logger.info("STARTING PIPELINE...")
 
-#Sentinel
+#----------------------------------------------------------SENTINEL_PIPELINE------------------------------------------------------------------------
 try:
     logger.info("STARTING SENTINEL PIPELINE...")
     sentinal_obj = SentinalPipeline()
@@ -28,7 +28,8 @@ try:
 except:
     logger.exception("AN ERROR OCCURRED WHILE RUNNING THE SENTINEL PIPELINE")
 
-#HDRUK
+
+#----------------------------------------------------------HDRUK_PIPELINE-------------------------------------------------------------------------
 try:
     logger.info("STARTING HDRUK PIPELINE...")
     hdruk_obj = HDRUKPipeline()
@@ -41,7 +42,7 @@ except:
     logger.exception("AN ERROR OCCURRED WHILE RUNNING THE HDRUK PIPELINE")
 
 
-#CPRD
+#----------------------------------------------------------CPRD_PIPELINE---------------------------------------------------------------------------
 try:
     logger.info("STARTING CPRD PIPELINE...")
     cprd_obj = CPRDPipeline()
@@ -54,7 +55,7 @@ except:
     logger.exception("AN ERROR OCCURRED WHILE RUNNING THE CPRD PIPELINE")    
 
 
-# PHEKB
+#----------------------------------------------------------PHEKB_PIPELINE-------------------------------------------------------------------------
 try:
     logger.info("STARTING PHEKB PIPELINE...")
     phekb_obj = PHEKBPipeline()
@@ -66,7 +67,7 @@ try:
 except:
     logger.exception("AN ERROR OCCURRED WHILE RUNNING THE PHEKB PIPELINE")  
 
-#OHDSI
+#----------------------------------------------------------OHDSI_PIPELINE-------------------------------------------------------------------------
 try:
     logger.info("STARTING OHDSI PIPELINE...")
     ohdsi_obj = OHDSIPipeline()
@@ -78,7 +79,7 @@ try:
 except:
     logger.exception("AN ERROR OCCURRED WHILE RUNNING THE OHDSI PIPELINE")  
 
-#MASTERLIST
+#----------------------------------------------------------MASTERLIST---------------------------------------------------------------------------
 try:
     logger.info("CREATING MASTERLIST")
     combined_detail = transform_detail(detail_files)
@@ -92,10 +93,12 @@ try:
 except:
     logger.exception("AN ERROR OCCURRED WHILE CREATING MASTERLIST ")    
 
-#NEO4J
+#----------------------------------------------------------NEO4J---------------------------------------------------------------------------
 try:
     logger.info("STARTING NEO4J LOADER...")
     push_to_neo4j(masterlist,detail_files,concept_files)
     logger.info("NEO4J LOADING COMPLETED SUCCESSFULLY")
 except:
     logger.exception("AN ERROR OCCURRED WHILE RUNNING THE NEO4J LOADER")
+
+#----------------------------------------------------------END---------------------------------------------------------------------------

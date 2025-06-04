@@ -13,8 +13,6 @@ st.set_page_config(
 
 # Import the CSS function from style.py
 from style import apply_custom_css
-
-import time
 from views.phenosearch import pheno_search
 from views.graph import graph_view
 from views.table import table_view
@@ -123,7 +121,7 @@ elif page == 'Phenomix Assistant':
         <div style='line-height: 1.7;'>
             <p><strong>1.</strong> What is the definition of 'COPD'?</p>
             <p><strong>2.</strong> Which websites mention 'Asthma'?</p>
-            <p><strong>3.</strong> What phenotype has the ID 'CP000002'?</p>
+            <p><strong>3.</strong> What phenotype has the detail PID 'CP000002'?</p>
             <p><strong>4.</strong> How many phenotypes are in the 'PHEKB' database?</p>
             <p><strong>5.</strong> Tell me about the data sources for 'Anxiety Disorder'.</p>
         </div>
