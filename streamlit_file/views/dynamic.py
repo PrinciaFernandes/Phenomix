@@ -22,7 +22,7 @@ Cypher_chain = GraphCypherQAChain.from_llm(
     allow_dangerous_requests = True
 )
 
-def dynamic_search(query):
+def dynamic_search(query:str):
     result = Cypher_chain.invoke({"query" : query})
     return result
 
@@ -33,6 +33,6 @@ Cypher_query = PromptTemplate(
     input_variables=["question"]
 )
 
-def get_cypher(query):
+def get_cypher(query:str):
     response = llm.invoke(Cypher_query.invoke({"question":query}))
     return response.content

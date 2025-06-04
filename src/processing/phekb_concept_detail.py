@@ -1,5 +1,5 @@
 
-def get_detail(phekb):
+def get_detail(phekb:list)->list:
     phekb_detail = phekb
     i = 0
     for detail in phekb_detail:
@@ -8,7 +8,7 @@ def get_detail(phekb):
         detail['PID'] = f'PP{i:06d}'
     return phekb_detail
 
-def get_concept(phekb,detail):
+def get_concept(phekb:list,detail:list)->list:
     phekb_concept = []
     i = 0
     for item_data in phekb:

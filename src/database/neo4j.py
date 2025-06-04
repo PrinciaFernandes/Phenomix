@@ -2,7 +2,7 @@ from src.utils import get_driver
 import json
 
 
-def push_to_neo4j(json_data,detail_file,concept_file):
+def push_to_neo4j(json_data:list, detail_file:list, concept_file:list)->None:
     driver = get_driver()
 
     with driver.session() as session:

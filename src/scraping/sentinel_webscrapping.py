@@ -106,7 +106,7 @@ def phenotype(pdf_url):
     return phenotype_dict
 
 
-def sentinel_scrapping(base_url):
+def sentinel_scrapping(base_url: str):
     sentinel  = []
     response = requests.get(base_url)
     soup = BeautifulSoup(response.content, 'html.parser')

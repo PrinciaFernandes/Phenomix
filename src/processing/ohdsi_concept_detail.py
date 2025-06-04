@@ -3,7 +3,7 @@ import csv
 import json
 
 
-def get_ohdsi_data(dir):
+def get_ohdsi_data(dir:str)->list:
     ohdsi = []
     for csv_file in os.listdir(dir):
         file_path = os.path.join(dir,csv_file)
@@ -15,13 +15,13 @@ def get_ohdsi_data(dir):
                 ohdsi.append(row)
     return ohdsi
 
-def get_detail(dir):
+def get_detail(dir:str)->list:
     with open(dir,'r') as file:
         file = file.read()
         ohdsi_detail = json.loads(file)
     return ohdsi_detail
 
-def get_concept(ohdsi,detail):
+def get_concept(ohdsi:list,detail:list)->list:
     ohdsi_concept = []
     concept_id_list = []
     i = 0

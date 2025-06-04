@@ -11,19 +11,19 @@ neo4j_uri = os.getenv("NEO4J_URI")
 neo4j_username = os.getenv("NEO4J_USERNAME")
 neo4j_password = os.getenv("NEO4J_PASSWORD")
 
-def save_json(dir,data,title):
+def save_json(dir:str,data:list,title:str)->None:
     if not os.path.exists(dir):
         os.makedirs(dir)
     with open(rf'{dir}\{title}_phenotypes.json','w') as file:
         json.dump(data,file,indent = 4)
 
-def save_detail(dir,data,title):
+def save_detail(dir:str,data:list,title:str)->None:
     if not os.path.exists(dir):
         os.makedirs(dir)
     with open(rf'{dir}\{title}_detail.json','w') as file:
         json.dump(data,file,indent=4)
 
-def save_concept(dir,data,title):
+def save_concept(dir:str,data:list,title:str)->None:
     if not os.path.exists(dir):
         os.makedirs(dir)
     with open(rf'{dir}\{title}_concept.json','w') as file:

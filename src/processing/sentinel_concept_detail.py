@@ -29,7 +29,7 @@ def get_request_date(date):
         Request_send_date = 'NA'
     return Request_send_date
 
-def get_detail(sentinel):
+def get_detail(sentinel:list)->list:
     outcome_list = []
     sentinel_detail = []
 
@@ -67,7 +67,7 @@ def get_detail(sentinel):
 
     return sorted_detail
 
-def get_concept(sentinel,detail):
+def get_concept(sentinel:list,detail:list)->list:
     sentinel_concept = []
     code_list = []
     for phenotype in sentinel:

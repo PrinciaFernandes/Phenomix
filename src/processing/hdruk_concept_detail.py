@@ -44,7 +44,7 @@ def date_extract(date):
         
     return event_start_date,event_end_date
 
-def get_detail(hdruk):
+def get_detail(hdruk:list)->list:
     hdruk_detail = []
 
     for data in hdruk:
@@ -90,7 +90,7 @@ def get_detail(hdruk):
     return sorted_detail
 
 
-def get_concept(hdruk,detail):
+def get_concept(hdruk:list,detail:list)->list:
     hdruk_concept = []
     id_list = []
     codelist = [data['codelist'] for data in hdruk]

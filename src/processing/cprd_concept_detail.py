@@ -1,5 +1,5 @@
 
-def get_detail(cprd):
+def get_detail(cprd:list)->list:
     i = 0
     hdruk_detail = []
     disease_list = []
@@ -18,7 +18,7 @@ def get_detail(cprd):
 
 
 
-def get_concept(cprd,detail):
+def get_concept(cprd:list,detail:list)->list:
     hdruk_concept = []
     disease_code_list = []
     for pheno in cprd:

@@ -1,6 +1,6 @@
 
 
-def transform_detail(detail_files):
+def transform_detail(detail_files:list)->list:
     new_detail = []
     for dict in detail_files:
         detail_dict = {}
@@ -18,7 +18,7 @@ def transform_detail(detail_files):
     return new_detail
 
 
-def get_pid_key(pid):
+def get_pid_key(pid:str)->str:
     keys = ['Phenotypes','hdruk_PID','phekb_PID','cprd_PID','Sentinel_PID','ohdsi_PID']
     key_map = {'H':keys[1],'P':keys[2],'C':keys[3],'S':keys[4],'O':keys[5]}
     init_pid = pid[0]
@@ -26,7 +26,7 @@ def get_pid_key(pid):
         return key_map[init_pid]
 
 
-def create_masterlist(combined_detail):
+def create_masterlist(combined_detail:list)->list:
     masterlist = []
     name_list = []
     keys = ['Phenotypes','hdruk_PID','phekb_PID','cprd_PID','Sentinel_PID','ohdsi_PID']

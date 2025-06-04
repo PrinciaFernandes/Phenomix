@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 
 
-def cprd_scrapping(base_url):
+def cprd_scrapping(base_url:str):
     cprd = []
     csv_files = []
     response = requests.get(base_url)

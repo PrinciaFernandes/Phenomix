@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from pyconceptlibraryclient import client
 
-def hdruk_scrapping(base_url,client):
+def hdruk_scrapping(base_url:str,client):
     hdruk = []
     response = requests.get(base_url)
     if response.status_code == 200: 
