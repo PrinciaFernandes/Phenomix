@@ -6,12 +6,14 @@ from src.utils import get_driver
 
 driver = get_driver()
 
-def get_graph_data(tx,name):
+def get_graph_data(tx,phenotype_name):
+    phenotype = f"(?i){phenotype_name}"
     query = """
-    MATCH (p:Phenotype{name:$name})-[:HAS_INSTANCE]->(w)-[:HAS_DETAIL]->(d)-[:HAS_CONCEPT]->(c)
+    MATCH (p:Phenotype)-[:HAS_INSTANCE]->(w)-[:HAS_DETAIL]->(d)-[:HAS_CONCEPT]->(c)
+    WHERE p.name =~ $name
     RETURN p, w, d, c
     """
-    return list(tx.run(query, name=name))
+    return list(tx.run(query, name=phenotype))
 
 def build_graph(records):
     G = nx.MultiDiGraph()
@@ -38,8 +40,6 @@ def draw_pyvis_graph(G):
     net.repulsion(node_distance=120)    
     return net.generate_html()
 
-
-
 def graph_view(phenotype_name):
     if phenotype_name:
         with driver.session() as session:   
@@ -52,5 +52,5 @@ def graph_view(phenotype_name):
                 html_content = draw_pyvis_graph(G)
                 components.html(html_content, height=750)
             else:
-                st.warning("No data found for this phenotype.")
+                st.warning("⚠️ No websites found for this phenotype.")
 
