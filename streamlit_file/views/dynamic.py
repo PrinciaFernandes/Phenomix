@@ -1,8 +1,8 @@
 from langchain_neo4j import GraphCypherQAChain
 from langchain_core.prompts import PromptTemplate
 from src.utils import get_graph
-from models.llm_model.gemini_model import chat_model
-from models.prompts.Prompts import cypher_prompt,query_generation_template
+from src.llm_model.gemini_model import chat_model
+from src.prompts.Prompts import cypher_prompt,query_generation_template
 
 llm = chat_model()
 graph = get_graph()

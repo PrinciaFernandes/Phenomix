@@ -4,8 +4,8 @@ import pdfplumber
 import io
 import json
 
-from models.llm_model.gemini_model import json_response
-from models.prompts.Prompts import prompt_overview,prompt_description
+from src.llm_model.gemini_model import get_json_response
+from src.prompts.Prompts import prompt_overview,prompt_description
 
 
 def overview_extract(pdf_path):
@@ -23,7 +23,7 @@ def overview_extract(pdf_path):
             if ' Request Send Date' in text and  'Glossary' not in text: 
                 overview_page += text   
 
-        overview = json_response(prompt_overview(overview_page))
+        overview = get_json_response(prompt_overview(overview_page))
 
     return overview
 
@@ -47,7 +47,7 @@ def description_extract(pdf_path):
             if extracted != '':
                 extracted_data.insert(0,extracted)
             for text in extracted_data:
-                description = json_response(prompt_description(text))
+                description = get_json_response(prompt_description(text))
                 description_new = json.loads(description.replace("\n",''))
                 if len(description_new) > 1:
                     phenotype_description = []
@@ -75,7 +75,7 @@ def extract_exceptionl(pdf_path):
                 extracted_text += text
         overview = overview_extract(pdf_path)
         
-        description = json_response(prompt_description(extracted_text))
+        description = get_json_response(prompt_description(extracted_text))
         description_json = json.loads(description.replace("\n",''))
         if len(description_json) > 1:
             phenotype = []

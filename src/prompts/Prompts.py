@@ -1,3 +1,5 @@
+from langchain_core.prompts import ChatPromptTemplate
+
 def prompt_overview(overview_page):
    return f'''
     Your task is to return a dictionary of the text {overview_page}
@@ -37,9 +39,9 @@ def prompt_description(description_page):
     3. The elements of the list should be multiple strings.
 
     Output Structure:
-    Each string in the list should follow this format:
+    Each element in the list should follow this format:
     "Code|Description|Code_Type|Code_Category"
-    These four columns are mandatory in each row.
+    These four columns are mandatory in each row. Use "|" to seperate the values in each element of the list, where each element is the data in  a row.
 
     - Code (Example: "K57.20" or "18.79", it can be either fully numeric or alphanumeric, but not fully alphabets like 'bleeding')
     - Description (Example: "Occlusion and stenosis of basilar artery with cerebral infarction")
@@ -85,9 +87,11 @@ def prompt_description(description_page):
 
     Final Output:
     A list of strings, where:
-    - The first string is the column headers:
-    "Code|Description|Code_Type|Code_Category"
-    - Each subsequent string represents a disease record.
+    - The first string is the column headers: "Code|Description|Code_Type|Code_Category"
+    - Each subsequent rows represents a disease record.
+
+**NOTE**:
+* Do not proviode any python code.
 
 '''
 
@@ -153,7 +157,7 @@ Question: What is the PID of the phenotype 'Asthma'?
 Cypher Query:
 MATCH (p:Phenotype)-[:HAS_INSTANCE]->(w:Website)-[:HAS_DETAIL]->(d:Detail)-[:HAS_CONCEPT]->(c:Concept)
 WHERE p.name = 'Asthma'
-RETURN w.PID AS PID
+RETURN w.PID AS PID 
 
 Example 2:
 Question: Retrieve the Concept ID (CID) linked to phenotype 'Cancer'.
@@ -164,3 +168,52 @@ RETURN c.CID AS CID
 
 User Question:{question}
 """
+
+Filter_template = ChatPromptTemplate([
+    ('system', '''
+Extract the following information from the user's query and return the response in dictionary:
+Your task is to identify the filtering content from the following user's query.
+Query = {query}.
+
+Identify the metadata field from query that can be used in metadata filtering of documents from vector store.
+Metadata fields in the stored documents will be in this format :
+Structure of the Metadata is a JSON object:
+* Include a key "phenotype_name" with value of The name of the disease(phenotype) mentioned in the query.
+* Include a key "website_name" with value of The name of the website mentioned in the query.
+
+Here ,
+1. phenotype_name: The name of the disease(phenotype) mentioned in the query.
+    Ex : 'acne','hiv','lung cancer'.
+
+2. website_name: The name of the website mentioned in the query.
+    Ex : 'hdruk', 'ohdsi', 'sentinel'.
+
+Identify value for respective field in metadata keys and return the response in dictionary format mentioned above.
+**NOTE:**
+*   If the value of any key is null then ignore that key.
+'''.strip()
+),
+    ('human', '{query}')
+])
+
+Generator_template = ChatPromptTemplate([
+    ('system',"""
+You are a helpful assistant.
+
+Your task is to generate an appropriate and human-understandable answer based strictly on the given content and the user's query.
+
+Query = {query}
+Content = {content}
+
+Instructions:
+- Understand the nature of the query: 
+    - If it asks for a short or factual answer, provide a concise and direct response.
+    - If it requires explanation, context, or elaboration, provide a clear and detailed answer.
+- If any ID (e.g., PID, CID, ID) is mentioned in the query, return the ID in uppercase.
+- Do not add any information outside the given content.
+- Maintain a natural tone suitable for a human reader.
+
+Only use the provided content to answer the query.
+""".strip()),
+    ('human', '{query}')
+])

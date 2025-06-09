@@ -14,6 +14,4 @@ HDRUK_DIR = r'data\processed\HDRUK'
 OHDSI_DIR = r'data\processed\OHDSI'
 PHEKB_DIR = r'data\processed\PHEKB'
 SENTINEL_DIR = r'data\processed\SENTINEL'
-
-
-
+VECTORDB_DIR = r'data\Chatbot_vector_db'

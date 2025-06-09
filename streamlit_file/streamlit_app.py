@@ -16,6 +16,7 @@ from views.phenosearch import pheno_search
 from views.graph import graph_view
 from views.table import table_view
 from views.dynamic import dynamic_search, get_cypher
+from views.chatbot import ChatBot
 
 # Apply the custom CSS
 apply_custom_css()
@@ -165,14 +166,16 @@ elif page == 'Phenomix ChatBot':
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
 
+    chatbot = ChatBot()
     # Simple chat input
     query = st.chat_input("Ask me anything about phenotypes...")
 
     if query:
         with st.spinner('Processing your question...'):
-            response = dynamic_search(query)
+            response = chatbot.get_result(query)
             st.session_state.chat_history.append((query, response))
-
+            st.chat_message("user").write(query)
+            st.chat_message("assistant").write(response)
     # Simple chat display
     if st.session_state.chat_history:
         st.subheader("Chat History")
