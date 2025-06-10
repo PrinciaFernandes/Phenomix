@@ -188,7 +188,7 @@ Here ,
 2. website_name: The name of the website mentioned in the query.
     Ex : 'hdruk', 'ohdsi', 'sentinel'.
 
-Identify value for respective field in metadata keys and return the response in dictionary format mentioned above.
+Identify value for respective field in metadata keys, convert them into lower case and return the response in dictionary format mentioned above.
 **NOTE:**
 *   If the value of any key is null then ignore that key.
 '''.strip()

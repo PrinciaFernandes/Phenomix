@@ -1,9 +1,8 @@
 from langchain_core.output_parsers import JsonOutputParser
-from langchain_google_genai import  GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from langchain_chroma import Chroma
 from src.prompts.Prompts import Filter_template ,Generator_template
 from dotenv import load_dotenv
-from src.llm_model.gemini_model import embedding_moedel,chat_model
+from src.llm_model.gemini_model import embedding_model,chat_model
 from src.config import VECTORDB_DIR
 import os
 
@@ -12,7 +11,7 @@ load_dotenv()
 class ChatBot:
     def __init__(self):
 
-        self.embeddings = embedding_moedel()
+        self.embeddings = embedding_model()
         self.vector_db = Chroma(embedding_function=self.embeddings, persist_directory=VECTORDB_DIR)
         self.llm = chat_model()
         self.parser = JsonOutputParser()
@@ -22,11 +21,12 @@ class ChatBot:
 
     def get_result(self, query):
 
-        filtering_result = self.filtering_chain.invoke({"query" : query})
-        
+        lower_query = query.lower()
+        filtering_result = self.filtering_chain.invoke({"query" : lower_query})
+
         retriever = self.vector_db.as_retriever(search_type="mmr", search_kwargs = {"k": 10, "filter":filtering_result, 'fetch_k':1000})
         response = retriever.invoke(query)
-
+    
         tupled_doc = [(doc.metadata,doc.page_content) for doc in response]
 
         result = self.generator_chain.invoke({"query": query, "content" : tupled_doc})
@@ -36,4 +36,6 @@ class ChatBot:
 # user_input = input("Enter your query: ").lower()
 # output = get_result(query=user_input)
 # print("\nFinal Result:\n", output)
- 
+chatbot = ChatBot()
+result = chatbot.get_result("Give a brief on Peanut Allergy?")
+print(result)

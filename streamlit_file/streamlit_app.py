@@ -157,14 +157,13 @@ elif page == 'Phenomix ChatBot':
     with st.expander("💡 Example Questions", expanded=True):
         st.markdown("""
         **Try asking these questions:**
-        1. Give a brief on Phenotype Allergy?
+        1. Give a brief on Peanut Allergy?
         2. What are PID of Acne?
-        3. Give brief on data sources of Anxiety Disorder?
         """)
 
     # Initialize chat history
-    if "chat_history" not in st.session_state:
-        st.session_state.chat_history = []
+    if "chatbot_chat_history" not in st.session_state:
+        st.session_state.chatbot_chat_history = []
 
     chatbot = ChatBot()
     # Simple chat input
@@ -173,9 +172,9 @@ elif page == 'Phenomix ChatBot':
     if query:
         with st.spinner('Processing your question...'):
             response = chatbot.get_result(query)
-            st.session_state.chat_history.append((query, response))
+            st.session_state.chatbot_chat_history.append((query, response))
             st.chat_message("user").write(query)
             st.chat_message("assistant").write(response)
-    # Simple chat display
-    if st.session_state.chat_history:
-        st.subheader("Chat History")
+    # # Simple chat display
+    # if st.session_state.chatbot_chat_history:
+    #     st.subheader("Chat History")
