@@ -1,8 +1,12 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from tqdm import tqdm
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveJsonSplitter
-from src.llm_model.gemini_model import embedding_moedel
+from src.llm_model.gemini_model import embedding_model
 from src.config import VECTORDB_DIR
 from src.utils import get_driver
 
@@ -12,12 +16,13 @@ class DataLoader:
     
     def __init__(self):
 
-        self.embeddings = embedding_moedel()
+        self.embeddings = embedding_model()
         self.driver = get_driver()
         self.vector_db = Chroma(persist_directory=VECTORDB_DIR,embedding_function=self.embeddings)
 
         self.cypher_query = """
         MATCH (p) -[:HAS_INSTANCE]->(w)-[:HAS_DETAIL]->(d)-[:HAS_CONCEPT]->(c)
+        WHERE p.name in ['Acne','AIDS','Acute myocardial infarction','Anxiety algorithm', 'Chronic Cystitis', 'Acute Kidney Injury','BMI','Blood Pressure','Cardiac Failure','Down Syndrome','HIV','Lung Cancer','Peanut Allergy','Sickle-cell anaemia','Wheezing']
         RETURN 
         p.name AS pname,
         properties(p) AS phenotype_props,

@@ -25,7 +25,7 @@ def chat_model():
     llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", api_key=api_key)
     return llm
 
-def embedding_moedel():
+def embedding_model():
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=api_key)
     return embeddings
 
