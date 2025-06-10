@@ -33,9 +33,4 @@ class ChatBot:
 
         return result.content
     
-# user_input = input("Enter your query: ").lower()
-# output = get_result(query=user_input)
-# print("\nFinal Result:\n", output)
-chatbot = ChatBot()
-result = chatbot.get_result("Give a brief on Peanut Allergy?")
-print(result)
+

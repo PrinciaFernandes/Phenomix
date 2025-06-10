@@ -161,20 +161,39 @@ elif page == 'Phenomix ChatBot':
         2. What are PID of Acne?
         """)
 
+   
     # Initialize chat history
-    if "chatbot_chat_history" not in st.session_state:
-        st.session_state.chatbot_chat_history = []
+    if "init" not in st.session_state:
+        st.session_state.init = True
+        st.session_state.chat_h = []
+    
 
     chatbot = ChatBot()
     # Simple chat input
     query = st.chat_input("Ask me anything about phenotypes...")
+    
+    
 
     if query:
-        with st.spinner('Processing your question...'):
-            response = chatbot.get_result(query)
-            st.session_state.chatbot_chat_history.append((query, response))
-            st.chat_message("user").write(query)
-            st.chat_message("assistant").write(response)
-    # # Simple chat display
-    # if st.session_state.chatbot_chat_history:
-    #     st.subheader("Chat History")
+        with st.container():
+            if st.session_state.chat_h:
+           
+                for chat in st.session_state.chat_h:
+                    with st.chat_message(chat["role"]):
+                        st.markdown(chat["content"])
+
+            st.chat_message("User").write(query)
+
+            with st.spinner('Processing your question...'):
+                response = chatbot.get_result(query)
+                
+            st.session_state.chat_h.append({"role":"User", "content":query})
+            st.chat_message("Assistant").write(response)
+            st.session_state.chat_h.append({"role":"Assistant", "content":response})
+
+
+
+
+    
+
+        
