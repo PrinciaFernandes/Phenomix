@@ -2,13 +2,13 @@
 
 An advanced phenotype search system integrating graph databases (Neo4j) and vector embeddings (ChromaDB) with LLM-powered RAG chatbot for efficient biomedical data retrieval.
 
-## 🔬 Project Overview
+##  Project Overview
 
 PHENOMIX is a comprehensive biomedical data retrieval system that combines the power of graph databases and vector embeddings to create an intelligent phenotype search platform. The system leverages web scraping, data processing, and machine learning to provide researchers with three specialized interfaces for phenotype discovery and analysis.
 
-## 🖥️ Three Specialized User Interfaces
+##  Three Specialized User Interfaces
 
-### 1. 🔍 Phenomix Explorer
+### 1.  Phenomix Explorer
 **Purpose**: Provide multi-faceted views of specific phenotype data
 
 **Functionality**:
@@ -17,7 +17,7 @@ PHENOMIX is a comprehensive biomedical data retrieval system that combines the p
 - **Table View**: Present phenotype data in structured, easy-to-read tabular format
 - **Graph View**: Visualize relationships and connections within the knowledge graph, making complex interdependencies clear
 
-### 2. 🤖 Phenomix Assistant
+### 2.  Phenomix Assistant
 **Purpose**: Intelligent question-answering system for phenotype-related queries
 
 **Functionality**:
@@ -26,7 +26,7 @@ PHENOMIX is a comprehensive biomedical data retrieval system that combines the p
 - **Cypher Query Transparency**: Uniquely displays the generated Cypher query executed to retrieve answers, offering insights into backend logic
 - **Technical Insights**: Bridge between user questions and database operations
 
-### 3. 💬 Phenomix ChatBot
+### 3.  Phenomix ChatBot
 **Purpose**: Conversational interface for general phenotype-related discussions
 
 **Functionality**:
@@ -34,7 +34,7 @@ PHENOMIX is a comprehensive biomedical data retrieval system that combines the p
 - **General Information Retrieval**: Ideal for quick summaries, definitions, or broad inquiries without needing underlying query language
 - **Natural Interaction**: Seamless dialogue experience for exploratory research
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ### Data Pipeline Workflow
 
@@ -53,7 +53,7 @@ PHENOMIX is a comprehensive biomedical data retrieval system that combines the p
 - **PheKB**: Phenotype KnowledgeBase
 - **OHDSI**: Observational Health Data Sciences phenotypes
 
-## 📁 Project Structure
+##  Project Structure
 ```
 PHENOMIX/
 ├── data/                               # Data storage
@@ -105,7 +105,7 @@ PHENOMIX/
 ├── main.py                             # Main execution script
 └── requirements.txt                    # Python dependencies
 ```
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -143,7 +143,7 @@ python main.py
 streamlit run streamlit_file\streamlit_app.py 
 ```
 
-## 🔧 Configuration
+##  Configuration
 
 The system uses environment variables for configuration. Key settings include:
 
@@ -152,7 +152,7 @@ The system uses environment variables for configuration. Key settings include:
 - Data directory paths
 - Logging levels
 
-## 📊 Features
+##  Features
 
 ### Core Functionality
 
@@ -186,7 +186,7 @@ The system uses environment variables for configuration. Key settings include:
 - **Responsive Design**: Optimized for researchers and clinicians
 - **Progressive Disclosure**: Information depth based on user needs
 
-## 🔍 Usage Guide
+##  Usage Guide
 
 ### Phenomix Explorer Usage
 1. Enter a phenotype name in the search box
@@ -225,7 +225,7 @@ pipeline = HDRUKPipeline()
 pipeline.main()
 ```
 
-## 🛠️ Development
+##  Development
 
 ### Adding New Data Sources
 
@@ -241,7 +241,7 @@ pipeline.main()
 3. **ChatBot Improvements**: Enhance conversational AI capabilities
 4. **Cross-Interface Features**: Add shared functionality across all three pages
 
-## 📝 Logging
+##  Logging
 
 The system provides comprehensive logging:
 
@@ -252,7 +252,7 @@ The system provides comprehensive logging:
 
 Logs are stored in the `logs/` directory with configurable levels.
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -260,11 +260,11 @@ Logs are stored in the `logs/` directory with configurable levels.
 4. Add tests if applicable
 5. Submit a pull request
 
-## 📄 License
+##  License
 
-This project is licensed under the terms specified in the LICENSE file.
+This project is licensed under the terms specified in the MIT LICENSE file.
 
-## 🔗 Related Technologies
+##  Related Technologies
 
 - **Neo4j**: Graph database for relationship storage
 - **ChromaDB**: Vector database for embeddings
@@ -272,10 +272,5 @@ This project is licensed under the terms specified in the LICENSE file.
 - **Google Gemini**: LLM and embedding services
 - **Trafilatura**: Web content extraction
 
-## 📞 Support
-
-For questions, issues, or contributions, please refer to the project's issue tracker or contact the development team.
-
----
 
 *PHENOMIX: Advancing biomedical research through intelligent phenotype discovery*
