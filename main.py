@@ -6,7 +6,7 @@ from src.pipeline.hdruk_pipe import HDRUKPipeline
 from src.pipeline.cprd_pipe import CPRDPipeline
 from src.pipeline.phekb_pipe import PHEKBPipeline
 from src.pipeline.ohdsi_pipe import OHDSIPipeline
-from src.config import MASTERLIST_DIR,PROCESSED_DIR
+from src.config import MASTERLIST_DIR
 from src.database.neo4j import push_to_neo4j
 from src.logger import get_logger
 
