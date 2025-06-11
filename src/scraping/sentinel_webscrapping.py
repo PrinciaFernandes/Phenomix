@@ -30,7 +30,7 @@ def overview_extract(pdf_path):
 def description_extract(pdf_path):
     with pdfplumber.open(pdf_path) as pdf:
         description_dict = []
-        chunk_size = 3
+        chunk_size = 5
         pages = len(pdf.pages)
         chunks = [range(i,i+chunk_size) if i + chunk_size <= pages else range(i,pages) for i in range(3,pages,chunk_size) ]
         for chunk in chunks:
@@ -40,7 +40,7 @@ def description_extract(pdf_path):
                 page = pdf.pages[each_page]
                 text = page.extract_text()
                 if not 'Glossary' in text and not 'Generic Name' in text and not 'Brand Name' in text:
-                    if len((extracted + text).split()) < 1800:
+                    if len((extracted + text).split()) < 5000:
                         extracted += text
                     else:
                         extracted_data.append(text)

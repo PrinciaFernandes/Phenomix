@@ -29,11 +29,12 @@ def get_request_date(date):
         Request_send_date = 'NA'
     return Request_send_date
 
-def get_detail(sentinel:list)->list:
+def get_detail(sentinel)->list:
     outcome_list = []
     sentinel_detail = []
 
     for phenotype in sentinel:
+        print(phenotype['phenotype'])
         phenotype_overview = phenotype['Overview']
         if phenotype_overview['Outcome'] not in outcome_list:
             outcome_list.append(phenotype_overview['Outcome'])        

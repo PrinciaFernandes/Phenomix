@@ -4,6 +4,7 @@ from src.config import RAW_DIR,SENTINEL_URL,SENTINEL_DIR
 from src.scraping.sentinel_webscrapping import sentinel_scrapping
 from src.processing.sentinel_concept_detail import get_detail, get_concept
 from src.logger import get_logger
+import json
 
 logger = get_logger(__name__)
 
@@ -22,6 +23,7 @@ class SentinalPipeline:
             save_json(RAW_DIR,sentinel,'SENTINEL')
         except:    
             logger.exception("ERROR while scrapping SENTINEL phenotypes")
+
 
         try:
             logger.info("Creating SENTINEL detail file...")

@@ -23,8 +23,11 @@ class ChatBot:
 
         lower_query = query.lower()
         filtering_result = self.filtering_chain.invoke({"query" : lower_query})
-
-        retriever = self.vector_db.as_retriever(search_type="mmr", search_kwargs = {"k": 10, "filter":filtering_result, 'fetch_k':1000})
+        if filtering_result:
+            metadata_filter = filtering_result
+        else:
+            metadata_filter = None
+        retriever = self.vector_db.as_retriever(search_type="mmr", search_kwargs = {"k": 10, "filter":metadata_filter, 'fetch_k':1000})
         response = retriever.invoke(query)
     
         tupled_doc = [(doc.metadata,doc.page_content) for doc in response]

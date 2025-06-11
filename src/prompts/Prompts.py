@@ -176,9 +176,10 @@ Your task is to identify the filtering content from the following user's query.
 Query = {query}.
 
 Identify the metadata field from query that can be used in metadata filtering of documents from vector store.
+Analyze the query and extract all the nouns. 
 Metadata fields in the stored documents will be in this format :
 Structure of the Metadata is a JSON object:
-* Include a key "phenotype_name" with value of The name of the disease(phenotype) mentioned in the query.
+* Include a key "phenotype_name" with value of The name of the disease(phenotype) mentioned in the query (Prabably a noun or acronym in the query).
 * Include a key "website_name" with value of The name of the website mentioned in the query.
 
 Here ,
