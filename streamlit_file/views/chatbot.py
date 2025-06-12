@@ -22,7 +22,7 @@ class ChatBot:
         self.parser = JsonOutputParser()
         self.filtering_chain = Filter_template | self.llm | self.parser
         self.generator_chain = Generator_template | self.llm
-        self.evaluator_llm = LangchainLLMWrapper(self.llm)
+
 
     def get_result(self, query):
         # self.session_id = str(uuid.uuid4().hex)
@@ -51,10 +51,10 @@ class ChatBot:
         return query,result.content,retrieved_contexts,reference
     
 
-    def ragas(self,data):
+    def ragas(self,dataset):
 
-
-        self.dataset = EvaluationDataset.from_list(data)
+        self.evaluator_llm = LangchainLLMWrapper(self.llm)
+        self.evaluation_dataset = EvaluationDataset.from_list(dataset)
 
         self.metrics = [
             Faithfulness(),
@@ -63,7 +63,7 @@ class ChatBot:
             NoiseSensitivity()
         ]
 
-        result = evaluate(dataset=self.dataset,metrics=self.metrics,llm=self.evaluator_llm)
+        result = evaluate(dataset=self.evaluation_dataset,metrics=self.metrics,llm=self.evaluator_llm)
         
         return result
     
