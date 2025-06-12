@@ -25,7 +25,7 @@ class ChatBot:
         self.session_id = str(uuid.uuid4().hex)
 
     def get_result(self, query):
-        logger = get_logger("ChatBot",self.session_id)
+        logger = get_logger(session_id=self.session_id)
         self.query = query
         lower_query = query.lower()
         filtering_result = self.filtering_chain.invoke({"query" : lower_query})
@@ -36,7 +36,7 @@ class ChatBot:
             metadata_filter = None
         retriever = self.vector_db.as_retriever(search_type="mmr", search_kwargs = {"k": 4, "filter":metadata_filter, 'fetch_k':1000})
         response = retriever.invoke(query)
-        logger.info("RAG result retrieved successfully")
+        logger.info("RAG result retrieved successfully -------------------------------------------")
         retrieved_contexts = [f"content:{doc.page_content}, metadata: {doc.metadata} " for doc in response]
         
         reference = ', '.join([doc.page_content for doc in response])
