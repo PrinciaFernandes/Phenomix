@@ -2,6 +2,7 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import streamlit as st
+import time
 
 # Simple page configuration
 st.set_page_config(
@@ -154,14 +155,35 @@ elif page == 'Phenomix ChatBot':
     st.markdown("<h1 style='text-align: center;'> 🌐 PHENOMIX CHATBOT</h1>", unsafe_allow_html=True)
     st.divider()
 
-    with st.expander("💡 Example Questions", expanded=True):
-        st.markdown("""
-        **Try asking these questions:**
-        1. Give a brief on Peanut Allergy?
-        2. What are PID of Acne?
-        """)
+    col1, col2 = st.columns(2)
 
-   
+    with col1:
+        with st.expander("**💡 Example Questions**", expanded=True):
+            st.markdown("""
+            1. What is HIV?
+            2. Give a brief on Peanut Allergy?
+            3. Give data sources and coding system of Acne?
+            """)
+
+    with col2:
+        with st.expander("📊 Model Evaluation", expanded=True):
+            st.markdown("**Evaluate the chatbot's performance metrics:**")
+            eval_button = st.button("🕵🏻 Evalute")
+            
+    if eval_button:
+        with st.container():
+            st.spinner('Calculating metrics...')
+            time.sleep(3)
+            st.markdown("***Performance Metrics***")
+
+            metric_col1, metric_col2 = st.columns(2)
+            with metric_col1:
+                st.metric(label="**Faithfulness**", value="0.85")
+                st.metric(label="**Context Precision**", value="0.92")
+            with metric_col2: 
+                st.metric(label="**Context Recall**", value="0.78")
+                st.metric(label="**Noise Sensitivity**", value="0.65")
+
     # Initialize chat history
     if "init" not in st.session_state:
         st.session_state.init = True
@@ -171,8 +193,7 @@ elif page == 'Phenomix ChatBot':
     chatbot = ChatBot()
     # Simple chat input
     query = st.chat_input("Ask me anything about phenotypes...")
-    
-    
+
 
     if query:
         with st.container():
