@@ -188,7 +188,7 @@ elif page == 'Phenomix ChatBot':
     if "init" not in st.session_state:
         st.session_state.init = True
         st.session_state.chat_h = []
-    
+        st.session_state.dataset = []
 
     chatbot = ChatBot()
     # Simple chat input
@@ -206,8 +206,15 @@ elif page == 'Phenomix ChatBot':
             st.chat_message("User").write(query)
 
             with st.spinner('Processing your question...'):
-                response = chatbot.get_result(query)
-                
+                query, response, retrieved_contexts,reference = chatbot.get_result(query)
+            
+            data = {
+            "user_input":[query],
+            "response":[response],
+            "retrieved_contexts":[retrieved_contexts],
+            "reference":[reference]
+            }
+            st.session_state.dataset.append(data)
             st.session_state.chat_h.append({"role":"User", "content":query})
             st.chat_message("Assistant").write(response)
             st.session_state.chat_h.append({"role":"Assistant", "content":response})
