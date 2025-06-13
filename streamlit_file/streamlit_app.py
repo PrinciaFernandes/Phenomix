@@ -188,12 +188,13 @@ elif page == 'Phenomix ChatBot':
                 query, response, retrieved_contexts,reference = chatbot.get_result(query)
             
             data = {
-            "user_input":[query],
-            "response":[response],
-            "retrieved_contexts":[retrieved_contexts],
-            "reference":[reference]
+            "user_input":query,
+            "response":response,
+            "retrieved_contexts":retrieved_contexts,
+            "reference":reference
             }
             st.session_state.dataset.append(data)
+
             st.session_state.chat_h.append({"role":"User", "content":query})
             st.chat_message("Assistant").write(response)
             st.session_state.chat_h.append({"role":"Assistant", "content":response})
