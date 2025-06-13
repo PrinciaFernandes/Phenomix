@@ -110,11 +110,11 @@ elif page == 'Phenomix Assistant':
     # Simple example questions
     with st.expander("💡 Example Questions", expanded=True):
         st.markdown("""
-        1. What is the definition of 'COPD'?
-        2. Which websites mention 'Asthma'?
-        3. What phenotype has the detail PID 'CP000002'?
-        4. How many phenotypes are in the 'PHEKB' database?
-        5. Tell me about the data source of 'Anxiety algorithm'?
+        1. Which websites mention 'Asthma'?
+        2. What phenotype has the detail PID 'CP000002'?
+        3. How many phenotypes are in the 'PHEKB' database?
+        4. Give the websites in which 'AIDS' and 'HIV' present?
+        5. Give the data sources of 'lung cancer'?
         """)
 
     # Initialize chat history
