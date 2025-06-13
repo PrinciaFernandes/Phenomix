@@ -1,16 +1,11 @@
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_chroma import Chroma
+import uuid
+
 from src.prompts.Prompts import Filter_template ,Generator_template
-from dotenv import load_dotenv
 from src.llm_model.gemini_model import embedding_model,chat_model
 from src.config import VECTORDB_DIR
-from datasets import Dataset
-from ragas import evaluate
-from ragas.metrics import Faithfulness,LLMContextRecall,LLMContextPrecisionWithReference,NoiseSensitivity
-from ragas.llms import LangchainLLMWrapper
-from ragas import EvaluationDataset
 from src.logger import get_logger
-import uuid
 
 
 class ChatBot:
