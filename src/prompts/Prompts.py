@@ -184,7 +184,7 @@ Structure of the Metadata is a JSON object:
 
 Here ,
 1. phenotype_name: The name of the disease(phenotype) mentioned in the query.
-    Ex : 'acne','hiv','lung cancer'.
+    Ex : 'acne','hiv','lung cancer','anxiety algorithm'
 
 2. website_name: The name of the website mentioned in the query.
     Ex : 'hdruk', 'ohdsi', 'sentinel'.

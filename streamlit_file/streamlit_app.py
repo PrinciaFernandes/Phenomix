@@ -215,7 +215,7 @@ elif page == 'Phenomix ChatBot':
             "reference":reference
             }
             st.session_state.dataset.append(data)
-            
+
             st.session_state.chat_h.append({"role":"User", "content":query})
             st.chat_message("Assistant").write(response)
             st.session_state.chat_h.append({"role":"Assistant", "content":response})
