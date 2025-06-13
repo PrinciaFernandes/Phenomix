@@ -157,7 +157,7 @@ elif page == 'Phenomix ChatBot':
     with st.expander("**💡 Example Questions**", expanded=True):
         st.markdown("""
         1. What is Peanut Allergy?
-        2. Give all id present in AIDS?
+        2. Give a brief on AIDS?
         3. Give the defination of Blood pressure?
         4. Give data sources and coding system of Acne?
         5. Give the races and gender present in Peanut Allergy?
@@ -167,7 +167,6 @@ elif page == 'Phenomix ChatBot':
     if "init" not in st.session_state:
         st.session_state.init = True
         st.session_state.chat_h = []
-        st.session_state.dataset = []
 
     chatbot = ChatBot()
     # Simple chat input
@@ -185,15 +184,8 @@ elif page == 'Phenomix ChatBot':
             st.chat_message("User").write(query)
 
             with st.spinner('Processing your question...'):
-                query, response, retrieved_contexts,reference = chatbot.get_result(query)
+                response = chatbot.get_result(query)
             
-            data = {
-            "user_input":query,
-            "response":response,
-            "retrieved_contexts":retrieved_contexts,
-            "reference":reference
-            }
-            st.session_state.dataset.append(data)
 
             st.session_state.chat_h.append({"role":"User", "content":query})
             st.chat_message("Assistant").write(response)

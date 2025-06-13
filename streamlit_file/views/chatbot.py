@@ -27,7 +27,7 @@ class ChatBot:
     def get_result(self, query):
 
         self.session_id = str(uuid.uuid4().hex)
-        logger = get_logger("ChatBot")
+        logger = get_logger("Chatbot")
 
         self.query = query
         lower_query = query.lower()
@@ -42,34 +42,12 @@ class ChatBot:
         response = retriever.invoke(query)
 
         logger.info(f"SessionID: {self.session_id}, RAG result retrieved successfully")
-        
-        retrieved_contexts = [f"content:{doc.page_content}, metadata: {doc.metadata} " for doc in response]
-        
-        reference = ', '.join([doc.page_content for doc in response])
 
         tupled_doc = [(doc.metadata,doc.page_content) for doc in response]
 
         result = self.generator_chain.invoke({"query": query, "content" : tupled_doc})
-
-
-        
-        return query,result.content,retrieved_contexts,reference
+   
+        return result.content
     
 
-    def ragas(self,dataset):
-
-        self.evaluator_llm = LangchainLLMWrapper(self.llm)
-        self.evaluation_dataset = EvaluationDataset.from_list(dataset)
-
-        self.metrics = [
-            Faithfulness(),
-            LLMContextRecall(),
-            LLMContextPrecisionWithReference(),
-            NoiseSensitivity()
-        ]
-
-        result = evaluate(dataset=self.evaluation_dataset,metrics=self.metrics,llm=self.evaluator_llm)
-        
-        return result
-    
-
+   

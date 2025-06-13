@@ -19,6 +19,6 @@ logging.basicConfig(
 console = logging.StreamHandler()
 logging.getLogger().addHandler(console)
 
-def get_logger(name=__name__,session_id=None):
-    logger = logging.getLogger(name,session_id)
+def get_logger(name=__name__):
+    logger = logging.getLogger(name)
     return logger
