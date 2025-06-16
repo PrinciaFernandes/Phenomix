@@ -110,12 +110,11 @@ elif page == 'Phenomix Assistant':
     # Simple example questions
     with st.expander("💡 Example Questions", expanded=True):
         st.markdown("""
-        **Try asking these questions:**
-        1. What is the definition of 'COPD'?
-        2. Which websites mention 'Asthma'?
-        3. What phenotype has the detail PID 'CP000002'?
-        4. How many phenotypes are in the 'PHEKB' database?
-        5. Tell me about the data sources for 'Anxiety Disorder'.
+        1. Which websites mention 'Asthma'?
+        2. What phenotype has the detail PID 'CP000002'?
+        3. How many phenotypes are in the 'PHEKB' database?
+        4. Give the websites in which 'AIDS' and 'HIV' present?
+        5. Give the data sources of 'lung cancer'?
         """)
 
     # Initialize chat history
@@ -155,40 +154,19 @@ elif page == 'Phenomix ChatBot':
     st.markdown("<h1 style='text-align: center;'> 🌐 PHENOMIX CHATBOT</h1>", unsafe_allow_html=True)
     st.divider()
 
-    col1, col2 = st.columns(2)
-
-    with col1:
-        with st.expander("**💡 Example Questions**", expanded=True):
-            st.markdown("""
-            1. What is HIV?
-            2. Give a brief on Peanut Allergy?
-            3. Give data sources and coding system of Acne?
-            """)
-
-    with col2:
-        with st.expander("📊 Model Evaluation", expanded=True):
-            st.markdown("**Evaluate the chatbot's performance metrics:**")
-            eval_button = st.button("🕵🏻 Evalute")
-            
-    if eval_button:
-        with st.container():
-            st.spinner('Calculating metrics...')
-            time.sleep(3)
-            st.markdown("***Performance Metrics***")
-
-            metric_col1, metric_col2 = st.columns(2)
-            with metric_col1:
-                st.metric(label="**Faithfulness**", value="0.85")
-                st.metric(label="**Context Precision**", value="0.92")
-            with metric_col2: 
-                st.metric(label="**Context Recall**", value="0.78")
-                st.metric(label="**Noise Sensitivity**", value="0.65")
+    with st.expander("**💡 Example Questions**", expanded=True):
+        st.markdown("""
+        1. What is Peanut Allergy?
+        2. Give a brief on AIDS?
+        3. Give the defination of Blood pressure?
+        4. Give data sources and coding system of Acne?
+        5. Give the races and gender present in Peanut Allergy?
+        """)
 
     # Initialize chat history
     if "init" not in st.session_state:
         st.session_state.init = True
         st.session_state.chat_h = []
-        st.session_state.dataset = []
 
     chatbot = ChatBot()
     # Simple chat input
@@ -206,23 +184,9 @@ elif page == 'Phenomix ChatBot':
             st.chat_message("User").write(query)
 
             with st.spinner('Processing your question...'):
-                query, response, retrieved_contexts,reference = chatbot.get_result(query)
+                response = chatbot.get_result(query)
             
-            data = {
-            "user_input":query,
-            "response":response,
-            "retrieved_contexts":retrieved_contexts,
-            "reference":reference
-            }
-            st.session_state.dataset.append(data)
-            
+
             st.session_state.chat_h.append({"role":"User", "content":query})
             st.chat_message("Assistant").write(response)
             st.session_state.chat_h.append({"role":"Assistant", "content":response})
-
-
-
-
-    
-
-        

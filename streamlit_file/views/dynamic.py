@@ -4,6 +4,7 @@ from src.utils import get_graph
 from src.llm_model.gemini_model import chat_model
 from src.prompts.Prompts import cypher_prompt,query_generation_template
 
+
 llm = chat_model()
 graph = get_graph()
  
