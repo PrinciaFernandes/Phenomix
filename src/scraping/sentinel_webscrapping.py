@@ -125,7 +125,7 @@ def sentinel_scrapping(base_url: str):
     i = 0              
     for link in page_links:
         content = requests.get(link)
-        if response.status_code == 200:  
+        if content.status_code == 200:  
             soup_page = BeautifulSoup(content.text,'html.parser')
         for link in soup_page.find_all('a', href=True):
             i += 1
