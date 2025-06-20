@@ -129,15 +129,16 @@ def sentinel_scrapping(base_url: str):
         else:
             continue
     i = 0              
-    for link in page_links[:2]:
+    for link in page_links[:5]:
         global TOKEN
         TOKEN = []
         content = requests.get(link)
         if content.status_code == 200:  
             soup_page = BeautifulSoup(content.text,'html.parser')
         for link in soup_page.find_all('a', href=True):
-            i += 1
+            
             if ".pdf" in link['href']: 
+                i += 1
                 pdf_link = requests.compat.urljoin(base_url, link['href'])
                 sentinel_dict = phenotype(pdf_link)
                 sentinel.append(sentinel_dict)
