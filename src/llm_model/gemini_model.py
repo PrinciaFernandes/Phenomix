@@ -18,7 +18,7 @@ def get_json_response(prompt):
             ],
             response_format={'type': 'json_object'}
         )
-    return response.choices[0].message.content
+    return response
 
 def chat_model():
     llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", api_key=api_key)
