@@ -3,27 +3,27 @@ from bs4 import BeautifulSoup
 import pdfplumber
 import io
 import json
-
+import pandas as pd
 from src.llm_model.gemini_model import get_json_response
 from src.prompts.Prompts import prompt_overview,prompt_description
 
+TOKEN = []
 
 def overview_extract(pdf_path):
-
     with pdfplumber.open(pdf_path) as pdf:
-
         overview_page = ''
 
         for page in pdf.pages[:4]:
             text = page.extract_text()
-
             if 'Overview' in text:
                 overview_page += text    
-
             if ' Request Send Date' in text and  'Glossary' not in text: 
                 overview_page += text   
 
-        overview = get_json_response(prompt_overview(overview_page))
+        response = get_json_response(prompt_overview(overview_page))
+        overview = response.choices[0].message.content
+        TOKEN.append(response.usage.to_dict())
+
 
     return overview
 
@@ -47,7 +47,10 @@ def description_extract(pdf_path):
             if extracted != '':
                 extracted_data.insert(0,extracted)
             for text in extracted_data:
-                description = get_json_response(prompt_description(text))
+                response = get_json_response(prompt_description(text))
+                description = response.choices[0].message.content
+                TOKEN.append(response.usage.to_dict())
+
                 description_new = json.loads(description.replace("\n",''))
                 if len(description_new) > 1:
                     phenotype_description = []
@@ -75,7 +78,9 @@ def extract_exceptionl(pdf_path):
                 extracted_text += text
         overview = overview_extract(pdf_path)
         
-        description = get_json_response(prompt_description(extracted_text))
+        response = get_json_response(prompt_description(extracted_text))
+        description = response.choices[0].message.content
+        TOKEN.append(response.usage.to_dict())
         description_json = json.loads(description.replace("\n",''))
         if len(description_json) > 1:
             phenotype = []
@@ -108,6 +113,7 @@ def phenotype(pdf_url):
 
 def sentinel_scrapping(base_url: str):
     sentinel  = []
+    df = pd.DataFrame(columns = ['Pdf_num'])
     response = requests.get(base_url)
     soup = BeautifulSoup(response.content, 'html.parser')
     page_links = []
@@ -123,7 +129,9 @@ def sentinel_scrapping(base_url: str):
         else:
             continue
     i = 0              
-    for link in page_links:
+    for link in page_links[:2]:
+        global TOKEN
+        TOKEN = []
         content = requests.get(link)
         if content.status_code == 200:  
             soup_page = BeautifulSoup(content.text,'html.parser')
@@ -134,4 +142,14 @@ def sentinel_scrapping(base_url: str):
                 sentinel_dict = phenotype(pdf_link)
                 sentinel.append(sentinel_dict)
                 print(f"{i}: {pdf_link}")
+                token = pd.DataFrame(TOKEN)
+                token['Pdf_num'] = i 
+                df = pd.concat([df, token], ignore_index=True)
+    df.to_excel(r'data/sentinel_token.xlsx', index=False)
     return sentinel
+
+
+if __name__ == "__main__":
+    base_url = "https://www.sentinelinitiative.org/methods-data-tools/health-outcomes-interest?1=Outcomes+Assessed+in+Inferential+Analyses"
+    sentinel_scrapping(base_url)
+    print("Sentinel Scrapping Completed")   

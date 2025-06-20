@@ -25,7 +25,7 @@ apply_custom_css()
 # Simple sidebar
 with st.sidebar:
     try:
-        st.image(r'streamlit_file\assets\icon.png', use_container_width=True)
+        st.image(r'streamlit_file/assets/icon.png', use_container_width=True)
     except:
         st.markdown("🧬")
     
